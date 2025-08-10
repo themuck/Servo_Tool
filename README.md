@@ -8,20 +8,19 @@ Ein Desktop-Tool zur Analyse, Konfiguration und zum Tuning von **Lichuan A5 Serv
 
 ## 🚀 Kernfunktionen
 
-*   **Echtzeit-Plotting:** Hochperformante grafische Darstellung von Servodaten wie Soll/Ist-Geschwindigkeit und Drehmoment mit automatischem Scrollen und Zoom-Funktionen.
+*   **Echtzeit-Plotting:** Grafische Darstellung von Servodaten wie Soll/Ist-Geschwindigkeit und Drehmoment mit automatischem Scrollen und Zoom-Funktionen.
 *   **Parameter-Management:**
     *   Übersicht aller Servoparameter, gruppiert nach Funktion.
     *   Lesen und Schreiben von einzelnen oder mehreren Parametern.
-    *   Intelligente Eingabefelder: Dropdown-Menüs für Parameter mit festen Optionen und Validierung für Wertebereiche, um Fehleingaben zu minimieren.
+    *   Eingabefelder: Dropdown-Menüs für Parameter mit festen Optionen und Validierung für Wertebereiche, um Fehleingaben zu minimieren.
 *   **Farbliche Statusanzeige:**
     *   ⚪ **Weiß:** Parameterwert entspricht dem Werks-Default.
     *   🟡 **Gelb:** Gelesener Wert weicht vom Default ab.
     *   🟠 **Orange:** Wert wurde im Programm geändert und ist noch nicht geschrieben.
 *   **Import & Export:** Sichern und Laden der gesamten Gerätekonfiguration im JSON-Format.
 *   **Diagnose:**
-    *   Live-Anzeige des I/O-Status (DI/DO).
-    *   Auslesen und Anzeigen der Fehlerhistorie mit Beschreibungen.
-*   **Simulationsmodus:** Ermöglicht das Testen der Oberfläche ohne angeschlossene Hardware.
+    *   Live-Anzeige des I/O & VDI/VDO -Status.
+ *   **Simulationsmodus:** Ermöglicht das Testen der Oberfläche ohne angeschlossene Hardware.
 
 ---
 
@@ -119,5 +118,6 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
 <img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/a069f7c6-ab77-4cc7-825a-13b370752467" />
 
 <img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/66d4305a-dfa5-4de7-9c94-7bf85cf950c2" />
+
 
 
