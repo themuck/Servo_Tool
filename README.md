@@ -34,42 +34,7 @@ Ein Desktop-Tool zur Analyse, Konfiguration und zum Tuning von **Lichuan A5 Serv
 
 ---
 
-## ⚙️ Installation
-
-1.  **Repository klonen:**
-    ```bash
-    git clone https://github.com/IhrBenutzername/IhrRepoName.git
-    cd IhrRepoName
-    ```
-
-2.  **Virtuelle Umgebung erstellen (dringend empfohlen):**
-    ```bash
-    # Für Windows
-    py -m venv venv
-    venv\Scripts\activate
-
-    # Für macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-3.  **Abhängigkeiten installieren:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
----
-
-## 🏁 Anwendung starten
-
-```bash
-# Stelle sicher, dass deine virtuelle Umgebung (venv) aktiviert ist
-py main.py
-```
-
----
-
-## 🔧 Workflow: Servo-Tuning (Empfohlene Vorgehensweise)
+## 🔧 Workflow: Servo-Tuning (Empfohlene Vorgehensweise, einer KI)
 
 Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Systems. Gehen Sie die Schritte in dieser Reihenfolge durch.
 
@@ -118,6 +83,7 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
 <img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/a069f7c6-ab77-4cc7-825a-13b370752467" />
 
 <img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/66d4305a-dfa5-4de7-9c94-7bf85cf950c2" />
+
 
 
 
