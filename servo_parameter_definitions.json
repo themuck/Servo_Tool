@@ -680,13 +680,13 @@
     "code": "P03-37",
     "name": "AI1 input filter time Constant",
     "unit": "ms",
-    "default": "2.00",
+    "default": "200",
     "hex": "0x0325",
     "decimal": 805,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 655.35,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -694,13 +694,13 @@
     "code": "P03-39",
     "name": "AI1 dead zone",
     "unit": "mV",
-    "default": "10.0",
+    "default": "100",
     "hex": "0x0327",
     "decimal": 807,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 1000.0,
+      "min": 0,
+      "max": 10000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -708,13 +708,13 @@
     "code": "P03-40",
     "name": "AI1 zero drift",
     "unit": "mV",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x0328",
     "decimal": 808,
     "validation": {
       "type": "range",
-      "min": -500.0,
-      "max": 500.0,
+      "min": -5000,
+      "max": 5000,
       "number_type": "signed_integer_16bit"
     }
   },
@@ -736,13 +736,13 @@
     "code": "P03-42",
     "name": "AI2 input filter time Constant",
     "unit": "ms",
-    "default": "2.00",
+    "default": "200",
     "hex": "0x032A",
     "decimal": 810,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 655.35,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -750,13 +750,13 @@
     "code": "P03-44",
     "name": "AI2 dead zone",
     "unit": "mV",
-    "default": "10.0",
+    "default": "100",
     "hex": "0x032C",
     "decimal": 812,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 1000.0,
+      "min": 0,
+      "max": 10000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -764,13 +764,13 @@
     "code": "P03-45",
     "name": "AI2 zero drift",
     "unit": "mV",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x032D",
     "decimal": 813,
     "validation": {
       "type": "range",
-      "min": -500.0,
-      "max": 500.0,
+      "min": -5000,
+      "max": 5000,
       "number_type": "signed_integer_16bit"
     }
   },
@@ -792,13 +792,13 @@
     "code": "P03-52",
     "name": "Analog 10V corresponding torque value",
     "unit": "times rated torque",
-    "default": "1.00",
+    "default": "100",
     "hex": "0x0334",
     "decimal": 820,
     "validation": {
       "type": "range",
-      "min": 1.0,
-      "max": 8.0,
+      "min": 100,
+      "max": 800,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -993,13 +993,13 @@
     "code": "P05-04",
     "name": "First-order low-pass filter time constant",
     "unit": "ms",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x0504",
     "decimal": 1284,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1021,13 +1021,13 @@
     "code": "P05-06",
     "name": "Average filter time constant",
     "unit": "ms",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x0506",
     "decimal": 1286,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 128.0,
+      "min": 0,
+      "max": 1280,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1692,8 +1692,8 @@
     "decimal": 1795,
     "validation": {
       "type": "range",
-      "min": -300.0,
-      "max": 300.0,
+      "min": -3000,
+      "max": 3000,
       "number_type": "signed_integer_16bit"
     }
   },
@@ -1701,13 +1701,13 @@
     "code": "P07-05",
     "name": "Torque command filter time constant",
     "unit": "ms",
-    "default": "0.79",
+    "default": "79",
     "hex": "0x0705",
     "decimal": 1797,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 30.0,
+      "min": 0,
+      "max": 300,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1715,13 +1715,13 @@
     "code": "P07-06",
     "name": "Second torque command filter time constant",
     "unit": "ms",
-    "default": "0.79",
+    "default": "79",
     "hex": "0x0706",
     "decimal": 1798,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 30.0,
+      "min": 0,
+      "max": 300,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1762,13 +1762,13 @@
     "code": "P07-09",
     "name": "Positive internal torque limit",
     "unit": "%",
-    "default": "300.0",
+    "default": "3000",
     "hex": "0x0709",
     "decimal": 1801,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1776,13 +1776,13 @@
     "code": "P07-10",
     "name": "Negative internal torque limit",
     "unit": "%",
-    "default": "300.0",
+    "default": "3000",
     "hex": "0x070A",
     "decimal": 1802,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1790,13 +1790,13 @@
     "code": "P07-11",
     "name": "Positive external torque limit",
     "unit": "%",
-    "default": "300.0",
+    "default": "3000",
     "hex": "0x070B",
     "decimal": 1803,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1804,13 +1804,13 @@
     "code": "P07-12",
     "name": "Negative external torque limit",
     "unit": "%",
-    "default": "300.0",
+    "default": "3000",
     "hex": "0x070C",
     "decimal": 1804,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1877,13 +1877,13 @@
     "code": "P07-21",
     "name": "Torque reaching reference value",
     "unit": "%",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x0715",
     "decimal": 1813,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1891,13 +1891,13 @@
     "code": "P07-22",
     "name": "Torque reaching active value",
     "unit": "%",
-    "default": "20.0",
+    "default": "200",
     "hex": "0x0716",
     "decimal": 1814,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1905,13 +1905,13 @@
     "code": "P07-23",
     "name": "Torque reaching inactive value",
     "unit": "%",
-    "default": "10.0",
+    "default": "100",
     "hex": "0x0717",
     "decimal": 1815,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 300.0,
+      "min": 0,
+      "max": 3000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1919,13 +1919,13 @@
     "code": "P07-40",
     "name": "Speed limit window in torque mode",
     "unit": "ms",
-    "default": "1.0",
+    "default": "10",
     "hex": "0x0728",
     "decimal": 1832,
     "validation": {
       "type": "range",
-      "min": 0.5,
-      "max": 30.0,
+      "min": 5,
+      "max": 300,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1933,13 +1933,13 @@
     "code": "P08-00",
     "name": "Speed loop gain",
     "unit": "Hz",
-    "default": "25.0",
+    "default": "250",
     "hex": "0x0800",
     "decimal": 2048,
     "validation": {
       "type": "range",
-      "min": 0.1,
-      "max": 2000.0,
+      "min": 1,
+      "max": 20000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1947,13 +1947,13 @@
     "code": "P08-01",
     "name": "Speed loop integral time constant",
     "unit": "ms",
-    "default": "31.83",
+    "default": "3183",
     "hex": "0x0801",
     "decimal": 2049,
     "validation": {
       "type": "range",
-      "min": 0.15,
-      "max": 512.0,
+      "min": 15,
+      "max": 5120,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1961,13 +1961,13 @@
     "code": "P08-02",
     "name": "Position loop gain",
     "unit": "Hz",
-    "default": "40.0",
+    "default": "400",
     "hex": "0x0802",
     "decimal": 2050,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 2000.0,
+      "min": 0,
+      "max": 20000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1975,13 +1975,13 @@
     "code": "P08-03",
     "name": "2nd speed loop gain",
     "unit": "Hz",
-    "default": "40.0",
+    "default": "400",
     "hex": "0x0803",
     "decimal": 2051,
     "validation": {
       "type": "range",
-      "min": 0.1,
-      "max": 2000.0,
+      "min": 1,
+      "max": 20000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -1989,13 +1989,13 @@
     "code": "P08-04",
     "name": "2nd speed loop integral time constant",
     "unit": "ms",
-    "default": "40.00",
+    "default": "4000",
     "hex": "0x0804",
     "decimal": 2052,
     "validation": {
       "type": "range",
-      "min": 0.15,
-      "max": 512.0,
+      "min": 15,
+      "max": 5120,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2003,13 +2003,13 @@
     "code": "P08-05",
     "name": "2nd position loop gain",
     "unit": "Hz",
-    "default": "64.0",
+    "default": "640",
     "hex": "0x0805",
     "decimal": 2053,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 2000.0,
+      "min": 0,
+      "max": 20000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2056,13 +2056,13 @@
     "code": "P08-10",
     "name": "Gain switching delay time",
     "unit": "ms",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x080A",
     "decimal": 2058,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 1000.0,
+      "min": 0,
+      "max": 10000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2098,13 +2098,13 @@
     "code": "P08-13",
     "name": "Position gain switching time",
     "unit": "ms",
-    "default": "3.0",
+    "default": "30",
     "hex": "0x080D",
     "decimal": 2061,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 1000.0,
+      "min": 0,
+      "max": 10000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2112,13 +2112,13 @@
     "code": "P08-15",
     "name": "Load inertia ratio",
     "unit": "Times",
-    "default": "1.00",
+    "default": "100",
     "hex": "0x080F",
     "decimal": 2063,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 120.0,
+      "min": 0,
+      "max": 1200,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2126,13 +2126,13 @@
     "code": "P08-18",
     "name": "Speed feedforward filter time constant",
     "unit": "ms",
-    "default": "0.50",
+    "default": "50",
     "hex": "0x0812",
     "decimal": 2066,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 64.0,
+      "min": 0,
+      "max": 640,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2140,13 +2140,13 @@
     "code": "P08-19",
     "name": "Speed feedforward gain",
     "unit": "%",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x0813",
     "decimal": 2067,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 100.0,
+      "min": 0,
+      "max": 1000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2154,13 +2154,13 @@
     "code": "P08-20",
     "name": "Torque feedforward filter time constant",
     "unit": "ms",
-    "default": "0.50",
+    "default": "50",
     "hex": "0x0814",
     "decimal": 2068,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 64.0,
+      "min": 0,
+      "max": 640,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2168,13 +2168,13 @@
     "code": "P08-21",
     "name": "Torque feedforward gain",
     "unit": "%",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x0815",
     "decimal": 2069,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 200.0,
+      "min": 0,
+      "max": 2000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2214,13 +2214,13 @@
     "code": "P08-24",
     "name": "Pseudo-differential feedforward control coefficient",
     "unit": "-",
-    "default": "100.0",
+    "default": "1000",
     "hex": "0x0818",
     "decimal": 2072,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 100.0,
+      "min": 0,
+      "max": 1000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2338,8 +2338,8 @@
     "decimal": 2313,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 2.0,
+      "min": 0,
+      "max": 20,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2529,13 +2529,13 @@
     "code": "P09-30",
     "name": "Torque disturbance compensation gain",
     "unit": "%",
-    "default": "0.0",
+    "default": "0",
     "hex": "0x091E",
     "decimal": 2334,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 100.0,
+      "min": 0,
+      "max": 1000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2543,13 +2543,13 @@
     "code": "P09-31",
     "name": "Torque disturbance observer filter time constant",
     "unit": "ms",
-    "default": "0.50",
+    "default": "50",
     "hex": "0x091F",
     "decimal": 2335,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 25.0,
+      "min": 0,
+      "max": 250,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -2557,13 +2557,13 @@
     "code": "P09-38",
     "name": "Low frequency resonance frequency",
     "unit": "Hz",
-    "default": "100.0",
+    "default": "1000",
     "hex": "0x0926",
     "decimal": 2342,
     "validation": {
       "type": "range",
-      "min": 1.0,
-      "max": 100.0,
+      "min": 1,
+      "max": 1000,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -3986,13 +3986,13 @@
     "code": "P12-21",
     "name": "1st segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1215",
     "decimal": 4629,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4032,13 +4032,13 @@
     "code": "P12-24",
     "name": "2nd segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1218",
     "decimal": 4632,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4078,13 +4078,13 @@
     "code": "P12-27",
     "name": "3rd segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x121B",
     "decimal": 4635,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4124,13 +4124,13 @@
     "code": "P12-30",
     "name": "4th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x121E",
     "decimal": 4638,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4170,13 +4170,13 @@
     "code": "P12-33",
     "name": "5th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1221",
     "decimal": 4641,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4216,13 +4216,13 @@
     "code": "P12-36",
     "name": "6th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1224",
     "decimal": 4644,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4262,13 +4262,13 @@
     "code": "P12-39",
     "name": "7th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1227",
     "decimal": 4647,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4308,13 +4308,13 @@
     "code": "P12-42",
     "name": "8th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x122A",
     "decimal": 4650,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4354,13 +4354,13 @@
     "code": "P12-45",
     "name": "9th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x122D",
     "decimal": 4653,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4400,13 +4400,13 @@
     "code": "P12-48",
     "name": "10th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1230",
     "decimal": 4656,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4446,13 +4446,13 @@
     "code": "P12-51",
     "name": "11th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1233",
     "decimal": 4659,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4492,13 +4492,13 @@
     "code": "P12-54",
     "name": "12th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1236",
     "decimal": 4662,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4538,13 +4538,13 @@
     "code": "P12-57",
     "name": "13th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1239",
     "decimal": 4665,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4584,13 +4584,13 @@
     "code": "P12-60",
     "name": "14th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x123C",
     "decimal": 4668,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4630,13 +4630,13 @@
     "code": "P12-63",
     "name": "15th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x123F",
     "decimal": 4671,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
@@ -4676,13 +4676,13 @@
     "code": "P12-66",
     "name": "16th segment command running time",
     "unit": "s(min)",
-    "default": "5.0",
+    "default": "50",
     "hex": "0x1242",
     "decimal": 4674,
     "validation": {
       "type": "range",
-      "min": 0.0,
-      "max": 6553.5,
+      "min": 0,
+      "max": 65535,
       "number_type": "unsigned_integer_16bit"
     }
   },
