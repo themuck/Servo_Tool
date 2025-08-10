@@ -1,0 +1,20 @@
+{
+  "P31": "set communication given servo related variables",
+  "P30": "set communication reading servo related variables",
+  "P17": "set virtual DIDO parameters",
+  "P12": "set multi-segment speed parameters",
+  "P11": "set multi-segment position function parameters",
+  "P0D": "set auxiliary function parameters",
+  "P0C": "set communication parameters",
+  "P0B": "set monitoring parameters",
+  "P0A": "set fault and protection parameters",
+  "P09": "set self-tuning parameters",
+  "P08": "set gain parameters",
+  "P07": "set torque control parameters",
+  "P06": "set speed control parameters",
+  "P05": "set position control parameters",
+  "P04": "set terminal output parameters",
+  "P03": "set terminal input parameters",
+  "P02": "set basic control parameters",
+  "P01": "set drive parameters"
+}

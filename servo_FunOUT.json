@@ -1,0 +1,186 @@
+[
+  {
+    "Option": "0",
+    "funOut": "FunOUT.0",
+    "name": null,
+    "function": null,
+    "description": null,
+    "remarks": null
+  },
+  {
+    "Option": "1",
+    "funOut": "FunOUT.1",
+    "name": "S-RDY",
+    "function": "Servo ready",
+    "description": "Servo status is ready to receive S-ON active signal: Active - Servo is ready; Inactive- Servo is not ready.",
+    "remarks": null
+  },
+  {
+    "Option": "2",
+    "funOut": "FunOUT.2",
+    "name": "TGON",
+    "function": "Motor rotation output",
+    "description": "Inactive, the absolute value of the motor speed after filtering is less than the set value of function code P06-16; Active, the absolute value of the motor speed after filtering reaches the set value of function code P06-16.",
+    "remarks": null
+  },
+  {
+    "Option": "3",
+    "funOut": "FunOUT.3",
+    "name": "ZERO",
+    "function": "Zero speed",
+    "description": "Inactive, when the speed feedback of the motor is greater than the value set by function code P06-19; Active, when the difference between the speed feedback of the motor and the given value is greater than the value set by function code P06-19.",
+    "remarks": null
+  },
+  {
+    "Option": "4",
+    "funOut": "FunOUT.4",
+    "name": "V-CMP",
+    "function": "Speed coincidence",
+    "description": "In speed control, it is active when the absolute value of the difference between the speed of the servo motor and the speed command is less than the set value of P06-17 speed deviation.",
+    "remarks": null
+  },
+  {
+    "Option": "5",
+    "funOut": "FunOUT.5",
+    "name": "COIN",
+    "function": "Positioning completed",
+    "description": "In position control, it is active when the position deviation pulse reaches the positioning completion range P05-21.",
+    "remarks": null
+  },
+  {
+    "Option": "6",
+    "funOut": "FunOUT.6",
+    "name": "NEAR",
+    "function": "Positioning approach",
+    "description": "In position control, it is active when the position deviation pulse reaches the setting of the positioning approach signal amplitude P05-22.",
+    "remarks": null
+  },
+  {
+    "Option": "7",
+    "funOut": "FunOUT.7",
+    "name": "C-LT",
+    "function": "Torque limit",
+    "description": "Confirmation signal of torque limit: Active - motor torque is limited; Inactive - motor torque is not limited.",
+    "remarks": null
+  },
+  {
+    "Option": "8",
+    "funOut": "FunOUT.8",
+    "name": "V-LT",
+    "function": "Speed limit",
+    "description": "Acknowledgement signal of speed limitation in torque control: Active - Motor speed is limited; Inactive - Motor speed is not limited.",
+    "remarks": null
+  },
+  {
+    "Option": "9",
+    "funOut": "FunOUT.9",
+    "name": "BK",
+    "function": "Brake output",
+    "description": "Brake signal output: Valid - close, release the brake; Invalid - Activate the brake.",
+    "remarks": null
+  },
+  {
+    "Option": "10",
+    "funOut": "FunOUT.10",
+    "name": "WARN",
+    "function": "Warning output",
+    "description": "Warning output signal is active. (On)",
+    "remarks": null
+  },
+  {
+    "Option": "11",
+    "funOut": "FunOUT.11",
+    "name": "ALM",
+    "function": "Fault output",
+    "description": "Status active when a fault is detected.",
+    "remarks": null
+  },
+  {
+    "Option": "12",
+    "funOut": "FunOUT.12",
+    "name": "ALMO1",
+    "function": "Outputs 3-digit alarm code",
+    "description": "Outputs 3-digit alarm code.",
+    "remarks": null
+  },
+  {
+    "Option": "13",
+    "funOut": "FunOUT.13",
+    "name": "ALMO2",
+    "function": "Outputs 3-digit alarm code",
+    "description": "Outputs 3-digit alarm code.",
+    "remarks": null
+  },
+  {
+    "Option": "14",
+    "funOut": "FunOUT.14",
+    "name": "ALMO3",
+    "function": "Outputs 3-digit alarm code",
+    "description": "Outputs 3-digit alarm code.",
+    "remarks": null
+  },
+  {
+    "Option": "15",
+    "funOut": "FunOUT.15",
+    "name": "Xintcoin",
+    "function": "Interrupt fixed length completion",
+    "description": "Active - Interrupt fixed length positioning completed; Inactive - Interrupt fixed length positioning is not completed.",
+    "remarks": null
+  },
+  {
+    "Option": "16",
+    "funOut": "FunOUT.16",
+    "name": "HomeAttain",
+    "function": "Homing output",
+    "description": "Homing status: Active - Homing; Inactive - Home is not reset.",
+    "remarks": null
+  },
+  {
+    "Option": "17",
+    "funOut": "FunOUT.17",
+    "name": "ElecHomeAttain",
+    "function": "Electrical homing output",
+    "description": "Electrical homing status: Active - Electrical home is reset; Inactive - Electrical home is not reset.",
+    "remarks": null
+  },
+  {
+    "Option": "18",
+    "funOut": "FunOUT.18",
+    "name": "ToqReach",
+    "function": "Torque reaching output",
+    "description": "Active - The absolute value of torque reaches the set value; Inactive - The absolute value of torque is less than the set value.",
+    "remarks": null
+  },
+  {
+    "Option": "19",
+    "funOut": "FunOUT.19",
+    "name": "V-Arr",
+    "function": "Speed reaching output",
+    "description": "Active - Speed feedback reaches the set value; Inactive - Speed feedback does not reach the set value.",
+    "remarks": null
+  },
+  {
+    "Option": "20",
+    "funOut": "FunOUT.20",
+    "name": "AngIntRdy",
+    "function": "Angle identification output",
+    "description": "Active - Angle identification completed; Inactive - Angle identification not completed.",
+    "remarks": null
+  },
+  {
+    "Option": "21",
+    "funOut": "FunOUT.21",
+    "name": "DB",
+    "function": "DB brake output",
+    "description": "Active - Dynamic brake relay disconnected; Inactive - Dynamic brake relay pickup.",
+    "remarks": null
+  },
+  {
+    "Option": "22",
+    "funOut": "FunOUT.22",
+    "name": "CmdOk",
+    "function": "Internal command output",
+    "description": "Active - Internal command completed; Inactive - Internal command not completed.",
+    "remarks": null
+  }
+]

@@ -1,0 +1,306 @@
+[
+  {
+    "Option": "0",
+    "funIn": "FunIN.0",
+    "name": null,
+    "function": null,
+    "description": null,
+    "remarks": null
+  },
+  {
+    "Option": "1",
+    "funIn": "FunIN.1",
+    "name": "S-ON",
+    "function": "Servo enabled",
+    "description": "Inactive - Servo motor enable is prohibited; Active - Servo motor power-on enable.",
+    "remarks": "Logic level must be set to Active level. Changes take effect after power cycle."
+  },
+  {
+    "Option": "2",
+    "funIn": "FunIN.2",
+    "name": "ALM-RST",
+    "function": "Fault and warning reset (edge active function)",
+    "description": "Inactive- disabled; Active - enabled.",
+    "remarks": "The logic of the terminal must be set to: Edge active. If active level is selected, the drive is forced to set to edge active internally. According to the alarm type, the servo can continue to work after some alarms are reset. For NO.1 and NO.2 resettable fault, it is necessary to turn off the servo enable signal (S-ON is set to OFF) before using this function."
+  },
+  {
+    "Option": "3",
+    "funIn": "FunIN.3",
+    "name": "GAIN-SEL",
+    "function": "Gain switching",
+    "description": "When P08-09=1: Inactive- The speed control loop is PI control; Active - The speed control loop is P control. When P08-09=2: Inactive- Fixed to first set of gains; Active - Fixed to second set of gains.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "4",
+    "funIn": "FunIN.4",
+    "name": "CMD-SEL",
+    "function": "Main and auxiliary running command switching",
+    "description": "Inactive - the current running command is A; Active - The current run command is B.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "5",
+    "funIn": "FunIN.5",
+    "name": "DIR-SEL",
+    "function": "Multi-speed DI switching running direction setting",
+    "description": "Inactive- Default command direction; Active- Command reverse direction.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "6",
+    "funIn": "FunIN.6",
+    "name": "CMD1",
+    "function": "Multi-segment running command switching 1",
+    "description": "16-segment command selection.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "7",
+    "funIn": "FunIN.7",
+    "name": "CMD2",
+    "function": "Multi-segment running command switching 2",
+    "description": "16-segment command selection.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "8",
+    "funIn": "FunIN.8",
+    "name": "CMD3",
+    "function": "Multi-segment running command switching 3",
+    "description": "16-segment command selection.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "9",
+    "funIn": "FunIN.9",
+    "name": "CMD4",
+    "function": "Multi-segment running command switching 4",
+    "description": "16-segment command selection.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "10",
+    "funIn": "FunIN.10",
+    "name": "M1-SEL",
+    "function": "Mode switching 1",
+    "description": "Switch among speed, position and torque according to the selected control mode (3, 4, 5).",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "11",
+    "funIn": "FunIN.11",
+    "name": "M2-SEL",
+    "function": "Mode switching 2",
+    "description": "Switch among speed, position and torque according to the selected control mode (6).",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "12",
+    "funIn": "FunIN.12",
+    "name": "ZCLAMP",
+    "function": "Home fixed enable",
+    "description": "Active- Enable zero position fix function; Inactive- Disable zero position fix function.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "13",
+    "funIn": "FunIN.13",
+    "name": "INHIBIT",
+    "function": "Position command disable",
+    "description": "Active - Prohibit command pulse input; Inactive- Allow command pulse input. Internal and external position commands are prohibited from running.",
+    "remarks": "The logic selection of the terminal must be set as: active level."
+  },
+  {
+    "Option": "14",
+    "funIn": "FunIN.14",
+    "name": "P-OT",
+    "function": "Positive overtravel switch",
+    "description": "Active- Prohibit forward drive; Inactive- Allow forward drive.",
+    "remarks": "When the mechanical movement exceeds the movable range, it enters the overtravel prevention function: the logic selection of the corresponding terminal is recommended to set to: active level."
+  },
+  {
+    "Option": "15",
+    "funIn": "FunIN.15",
+    "name": "N-OT",
+    "function": "Reverse overtravel switch",
+    "description": "Active - Prohibit reverse drive; Inactive- Allow reverse drive.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "16",
+    "funIn": "FunIN.16",
+    "name": "P-CL",
+    "function": "Positive external torque limit",
+    "description": "Switch the torque limit source according to P07-07. When P07-07=1: Active- Forward external torque limit is active; Inactive- Forward internal torque limit is active. P07-07=3 and the AI limit value is greater than the forward external limit value: Active- Forward external torque limit is active; Inactive - AI torque limit is active. When P07-07=4: Active - AI torque limit is active; Inactive- Forward internal torque limit is active.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "17",
+    "funIn": "FunIN.17",
+    "name": "N-CL",
+    "function": "Negative external torque limit",
+    "description": "Switch the torque limit source according to P07-07. When P07-07=1: Active- Reverse external torque limit is active; Inactive- Reverse internal torque limit is active. P07-07=3 and the AI limit value is less than the reverse external limit value: Active- Reverse external torque limit is active. Inactive - AI torque limit is active. When P07-07=4: Active - AI torque limit is active; Inactive- Reverse internal torque limit is active.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "18",
+    "funIn": "FunIN.18",
+    "name": "JOGCMD+",
+    "function": "Forward jog",
+    "description": "Active- Input according to the given command; Inactive- Running command stops input.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "19",
+    "funIn": "FunIN.19",
+    "name": "JOGCMD-",
+    "function": "Negative jog",
+    "description": "Active- Reverse input according to the given command; Inactive- Running command stops input.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "20",
+    "funIn": "FunIN.20",
+    "name": "POSSTEP",
+    "function": "Step size enable",
+    "description": "Active- Execute the command of step size; Inactive- The command is zero, which is the positioning state.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Edge active."
+  },
+  {
+    "Option": "21",
+    "funIn": "FunIN.21",
+    "name": "HX1",
+    "function": "Handwheel magnification signal 1",
+    "description": "*10 times: HX1 is active, HX2 is inactive *100 times: HX1 is inactive, HX2 is active",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "22",
+    "funIn": "FunIN.22",
+    "name": "HX2",
+    "function": "Handwheel magnification signal 2",
+    "description": "*10 times: HX1 is active, HX2 is inactive *100 times: HX1 is inactive, HX2 is active",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "23",
+    "funIn": "FunIN.23",
+    "name": "HX_EN",
+    "function": "Handwheel enable signal",
+    "description": "Inactive- Select position control according to P05-00; Active- Receive handwheel pulse signal in location mode for position control.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "24",
+    "funIn": "FunIN.24",
+    "name": "GEAR_SEL",
+    "function": "Electronic gear selection",
+    "description": "Inactive- Electronic gear ratio 1; Active- Electronic gear ratio 2.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "25",
+    "funIn": "FunIN.25",
+    "name": "TOQDirSel",
+    "function": "Torque command direction setting",
+    "description": "Inactive- Positive direction; Active - Reverse direction.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "26",
+    "funIn": "FunIN.26",
+    "name": "SPDDirSel",
+    "function": "Speed command direction setting",
+    "description": "Inactive- Positive direction; Active - Reverse direction.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "27",
+    "funIn": "FunIN.27",
+    "name": "POSDirSel",
+    "function": "Position command direction setting",
+    "description": "Inactive, the actual position command direction is the same as the set position command direction; Active, the actual position command direction is opposite to the set position command direction;",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "28",
+    "funIn": "FunIN.28",
+    "name": "PosInSen",
+    "function": "Multi-segment position command enable",
+    "description": "Edge active Inactive- Ignore internal multi-segment commands; Active- Initiate internal multi-segment.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "29",
+    "funIn": "FunIN.29",
+    "name": "XintFree",
+    "function": "Interrupt fixed-length state release",
+    "description": "Inactive- disabled; Active - enabled.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set to: Edge active."
+  },
+  {
+    "Option": "31",
+    "funIn": "FunIN.31",
+    "name": "HomeSwitch",
+    "function": "Home switch",
+    "description": "Inactive- not trigger; Active - Trigger.",
+    "remarks": "The logic selection of the corresponding terminal must be set to: active level. If it is set to 2 (rising edge active), the drive will be forced to change to 1 (high level active); If it is set to 3 (falling edge active), the drive will be forced to change to 0 (low level active); If it is set to 4 (both rising edge and falling edge active), the drive will be forced to change to 0 (low level active)"
+  },
+  {
+    "Option": "32",
+    "funIn": "FunIN.32",
+    "name": "HomingStart",
+    "function": "Homing enable",
+    "description": "Inactive- disabled; Active - enabled.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set to: Edge active."
+  },
+  {
+    "Option": "33",
+    "funIn": "FunIN.33",
+    "name": "XintInhibit",
+    "function": "Interrupt fixed length disable",
+    "description": "Active - Prohibit interrupt fixed length; Inactive- Allow interrupt fixed length.",
+    "remarks": "The logic selection of the corresponding terminal must be set to: active level. If it is set to 2 (rising edge active), the drive will be forced to change to 1 (high level active); If it is set to 3 (falling edge active), the drive will be forced to change to 0 (low level active); If it is set to 4 (both rising edge and falling edge active), the drive will be forced to change to 0 (low level active)"
+  },
+  {
+    "Option": "34",
+    "funIn": "FunIN.34",
+    "name": "Emergency Stop",
+    "function": "Emergency shutdown",
+    "description": "Active - Lock position after zero speed stop; Inactive- Has no effect on the current running state.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "35",
+    "funIn": "FunIN.35",
+    "name": "ClrPosErr",
+    "function": "Clear position deviation",
+    "description": "Active - Position deviation is cleared; Inactive- Position deviation is not cleared.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set to: Edge active. It is recommended to configure this DI function to DI8 or DI9 terminal."
+  },
+  {
+    "Option": "36",
+    "funIn": "FunIN.36",
+    "name": "V_LmtSel",
+    "function": "Internal speed limit source",
+    "description": "Active - P07-19 is used as internal positive and negative speed limit value (P07-17=2) Inactive- P07-20 is used as internal positive and negative speed limit value (P07-17=2)",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "37",
+    "funIn": "FunIN.37",
+    "name": "Pulselnhibit",
+    "function": "Pulse command prohibition",
+    "description": "In position control mode, when the source of position command is pulse command (P05-00=0): Inactive- Respond to pulse commands; Active - Not respond to pulse commands;",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set as: Active level."
+  },
+  {
+    "Option": "38",
+    "funIn": "FunIN.38",
+    "name": "HomingStart",
+    "function": "The current position is zero",
+    "description": "Inactive- disabled; Active - enabled.",
+    "remarks": "The logic selection of the corresponding terminal is recommended to be set to: Edge active."
+  }
+]

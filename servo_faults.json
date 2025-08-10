@@ -1,0 +1,356 @@
+[
+  {
+    "code": "Er.101",
+    "name": "Parameters of P02 and above sets are abnormal",
+    "resettable": "No",
+    "description": "1. The function code parameter value of P02 and following sets exceeds the upper and lower limits, and the parameters are re-initialized; 2. Power off during the process of writing parameters, rewrite the parameters after power on; 3. Reset the motor model and drive model, and initialize the parameters; 4. The drive EEPROM is abnormal, replace the drive."
+  },
+  {
+    "code": "Er.102",
+    "name": "Programmable logic configuration failure",
+    "resettable": "No",
+    "description": "MCU related hardware is damaged, replace the drive."
+  },
+  {
+    "code": "Er.104",
+    "name": "Programmable logic interrupt failure",
+    "resettable": "No",
+    "description": "MCU related hardware is damaged, replace the drive."
+  },
+  {
+    "code": "Er.105",
+    "name": "Abnormal internal program",
+    "resettable": "No",
+    "description": "1. When EEPROM reads/writes function codes, the total number of function codes is abnormal, initialize the parameters; 2. The range of the set value of the function code is abnormal, initialize the parameters; 3. Initialize and power on again. If the alarm still occurs, replace the drive."
+  },
+  {
+    "code": "Er.108",
+    "name": "Parameter storage failure",
+    "resettable": "No",
+    "description": "1. The parameter value can’t be written to the EEPROM, initialize the parameter; 2. Initialize and power on again. If the alarm still occurs, replace the drive."
+  },
+  {
+    "code": "Er.111",
+    "name": "Internal failure",
+    "resettable": "No",
+    "description": "Initialize and power on again. If the alarm still occurs, replace the drive."
+  },
+  {
+    "code": "Er.120",
+    "name": "Product matching failure",
+    "resettable": "No",
+    "description": "The motor model and drive model match incorrectly, please contact the after-sales personnel to check the motor model."
+  },
+  {
+    "code": "Er.121",
+    "name": "Servo ON command invalid fault",
+    "resettable": "Yes",
+    "description": "DI port parameter configuration fault, recheck DI function and VDI function configuration"
+  },
+  {
+    "code": "Er.122",
+    "name": "Absolute position mode product matching failure",
+    "resettable": "No",
+    "description": "The absolute value motor model does not match, or the motor model is set incorrectly, please contact the after-sales personnel to check the motor model."
+  },
+  {
+    "code": "Er.130",
+    "name": "Duplicate assignment of DI function",
+    "resettable": "Yes",
+    "description": "DI port parameter configuration failure, recheck the DI function and VDI function configuration or initialize parameters."
+  },
+  {
+    "code": "Er.131",
+    "name": "DO function allocation overrun",
+    "resettable": "Yes",
+    "description": "DO function number exceeds DO function number, recheck DO function configuration or initialize parameters."
+  },
+  {
+    "code": "Er.136",
+    "name": "The data in motor ROM is incorrectly verified or the parameters are not saved",
+    "resettable": "No",
+    "description": "When the drive reads the parameters in the encoder ROM area, it finds that the parameters are not saved, or the parameters are inconsistent with the agreed values 1. Check the motor model and drive model; 2. Check whether the motor encoder cable is correct, and whether the connector is connected reliably; 3. Check if the encoder line is disturbed, and re-arrange the wires."
+  },
+  {
+    "code": "Er.201",
+    "name": "Overcurrent 2",
+    "resettable": "No",
+    "description": "1. Check whether the motor power lines U V W are correctly connected, and whether there is a reverse connection or phase loss; 2. There is a short circuit in the U V W lines, or there is leakage between the motor coil and the casing, replace the motor wire or test the motor; 3. The encoder line is in poor contact, check or replace the encoder cable; 4. The load is too heavy, first test whether the motor is normal with no load; 5. The acceleration and deceleration are too fast, increase the acceleration and deceleration time of the program; 6. If the gain parameter is adjusted, check whether the gain is set too large, and test after reducing the gain; 7. The braking resistor is too small or short-circuited, test with internal braking resistor first; 8. The drive is damaged, replace the drive;"
+  },
+  {
+    "code": "Er.207",
+    "name": "D/Q axis current overflow fault",
+    "resettable": "Yes",
+    "description": "Abnormal current feedback causes the internal register of the drive to overflow, replace the drive;"
+  },
+  {
+    "code": "Er.208",
+    "name": "System sampling operation timeout",
+    "resettable": "No",
+    "description": "1. MCU communication timeout, replace the drive 2. Encoder communication times out, check whether the encoder line is connected well, or replace the encoder and reconnect; 3. Motor encoder is faulty, replace the motor for test; 4. Current sampling times out, check whether there is interference from large equipment on site, increase the isolation transformer, and re-arrange the wires; 5. High-precision AD conversion times out, check the analog input wiring to see if there is interference, and connect with shielded wire; 6. The drive is damaged, replace the drive;"
+  },
+  {
+    "code": "Er.210",
+    "name": "Output short circuit to ground",
+    "resettable": "No",
+    "description": "During the power-on self-test of the drive, the motor phase current or bus voltage is detected abnormal. 1. The power lines U V W are short-circuited to the ground, check the motor lines; 2. The motor coil is short-circuited to the casing, replace the motor; 3. Drive failure, replace the drive."
+  },
+  {
+    "code": "Er.220",
+    "name": "Phase sequence error",
+    "resettable": "No",
+    "description": "The drive performs angle identification, and it is identified that the phase sequence of the UVW of the drive and the UVW of the motor do not match. 1. The electrical angle of the motor encoder does not match, reset the motor parameters, and self-learn; 2. The U V W phase sequence is reversed, check the motor power lines;"
+  },
+  {
+    "code": "Er.234",
+    "name": "Overspeed",
+    "resettable": "No",
+    "description": "In torque control mode, the direction of the torque command is opposite to the direction of the speed feedback or in the position or speed control mode, the direction of the speed feedback is opposite to the direction of the speed command; 1. The U V W phase sequence is reversed, check the motor power lines; 2. Initial phase detection error of the motor rotor is caused by the interference signal, re-power on, and check the wiring; 3. The encoder model is wrong or the wiring is wrong, replace the motor or encoder line; 4. Drive failure, replace the drive;"
+  },
+  {
+    "code": "Er.400",
+    "name": "Main circuit overvoltage",
+    "resettable": "Yes",
+    "description": "DC bus voltage exceeds fault value 420V 1. Measure the power supply voltage. If the grid voltage is too high or unstable, a voltage stabilizer needs to be added; 2. The braking resistor fails, measure the resistance between B1 and B3 of the drive in the state of complete power failure. If it is infinite, the internal braking resistor is damaged and the drive needs to be replaced; 3. The resistance of the braking resistor is too large, replace it with a braking resistor of 40 ohms or 50 ohms, please contact the after-sales personnel; 4. The grid voltage is too high, and the motor accelerates and decelerates too fast, increase the acceleration and deceleration time; 5. Monitor P0B-26 to check whether the bus voltage is consistent with the grid voltage. If the difference is too large, the drive may be damaged and needs to be replaced. 220V AC corresponds to the bus voltage of 310V."
+  },
+  {
+    "code": "Er.410",
+    "name": "Main circuit undervoltage",
+    "resettable": "Yes",
+    "description": "DC bus voltage is lower than the fault value 200V 1. The main circuit power supply is unstable or power off, re-check the wiring, or add a voltage stabilizer; 2. Monitor P0B-26 to check whether the bus voltage is consistent with the grid voltage. If the difference is too large, the drive may be damaged and needs to be replaced. 220V AC corresponds to the bus voltage of 310V."
+  },
+  {
+    "code": "Er.420",
+    "name": "Main circuit power phase loss",
+    "resettable": "Yes",
+    "description": "Servo drive failure, replace the drive."
+  },
+  {
+    "code": "Er.430",
+    "name": "Control power undervoltage",
+    "resettable": "Yes",
+    "description": "Servo drive failure, replace the drive."
+  },
+  {
+    "code": "Er.500",
+    "name": "Overspeed alarm",
+    "resettable": "Yes",
+    "description": "The actual speed of the servo motor exceeds the overspeed fault threshold 1. The phase sequence of motor cable U V W is wrong, check the motor wiring; 2. The motor parameters are incorrect, reset the motor parameters and self-learn; 3. The input command exceeds the overspeed fault threshold; 4. The motor speed is overregulated, the gain parameter setting is unreasonable, initialize the drive parameters and test; 5. Drive failure, replace the drive."
+  },
+  {
+    "code": "Er.510",
+    "name": "Pulse output overspeed",
+    "resettable": "Yes",
+    "description": "The output pulse frequency exceeds the upper limit of the frequency allowed by the hardware; reduce P05-17 (number of pulses divided by the encoder frequency), so that the output pulse frequency is less than the upper limit of the allowable frequency."
+  },
+  {
+    "code": "Er.602",
+    "name": "Angle identification failed",
+    "resettable": "Yes",
+    "description": "Motor self-learning failed, check whether the encoder line is normal and the encoder type is correct."
+  },
+  {
+    "code": "Er.610",
+    "name": "Drive overload",
+    "resettable": "Yes",
+    "description": "1. The motor model or drive model is set incorrectly, please contact the after-sales personnel to check the parameters; 2. Monitor the drive load rate PB-02 to see if the overload causes an alarm; 3. The motor is stalled, first eliminate the motor stall and then test, or remove the motor for no-load test; 4. The gain parameter setting is too large, test after initializing the parameters; 5. Motor acceleration and deceleration is too fast, increase the acceleration and deceleration time; 6. The phase sequence of motor cable U V W is wrong, check the motor wiring; 7. The drive is damaged, replace the drive."
+  },
+  {
+    "code": "Er.620",
+    "name": "Motor overload",
+    "resettable": "Yes",
+    "description": ""
+  },
+  {
+    "code": "Er.625",
+    "name": "Brake closed abnormally",
+    "resettable": "Yes",
+    "description": "After the brake protection is turned on, the brake output signal is valid, the first 100~500ms of the input command is zero, the output torque is less than 70% of the gravity load detection value.Confirm whether the signal of the motor brake terminal is valid and whether the motor brake relay is damaged"
+  },
+  {
+    "code": "Er.626",
+    "name": "Brake opened abnormally",
+    "resettable": "Yes",
+    "description": "After the brake protection is turned on, the output signal of the brake is invalid, but it is detected that the motor rotates more than two turns Check whether the motor brake terminal signal is valid and whether the motor brake relay is damaged."
+  },
+  {
+    "code": "Er.630",
+    "name": "Motor stall",
+    "resettable": "Yes",
+    "description": "The actual speed of the motor is lower than 10rpm, but the torque command reaches the limit value, and the duration reaches the set value of P0A-32 1. The UVW output of the drive is out of phase, disconnected, and wrongly connected in phase sequence; 2. The motor parameters are incorrect, reset the motor parameters and self-learn; 3. The motor is stalled, first eliminate the motor stall and then test, or remove the motor for no-load test;"
+  },
+  {
+    "code": "Er.650",
+    "name": "Heat sink overheating",
+    "resettable": "Yes",
+    "description": "The temperature of the power module of the drive is higher than the over-temperature protection point, the servo drive is faulty, replace the drive."
+  },
+  {
+    "code": "Er.731",
+    "name": "Encoder battery failure",
+    "resettable": "Yes",
+    "description": "The battery voltage of the absolute value encoder is lower than 3.0V 1. The encoder line is disconnected, set P0D-20=2, and then set P0D-01=1 to clear the fault; 2. The battery is dead, replace the battery."
+  },
+  {
+    "code": "Er.733",
+    "name": "Encoder multi-turn count error",
+    "resettable": "Yes",
+    "description": "Initialize the drive parameters, reset the motor parameters and drive parameters, set the encoder type, Then set P0D-20=2 and P0D-01=1 to clear the fault and power on again. If the alarm still occurs, replace the motor and test."
+  },
+  {
+    "code": "Er.735",
+    "name": "Encoder multi-turn count overflow",
+    "resettable": "Yes",
+    "description": "Initialize the drive parameters, reset the motor parameters and drive parameters, set the encoder type, Then set P0D-20=2 and P0D-01=1 to clear the fault and power on again. If the alarm still occurs, replace the motor and test."
+  },
+  {
+    "code": "Er.740",
+    "name": "Encoder interference",
+    "resettable": "No",
+    "description": "Encoder Z signal is interfered, causing the electrical angle corresponding to the Z signal to change too much 1. The encoder wiring is wrong or the connector is loose, check or replace the encoder line and test it; 2. Encoder Z signal is disturbed, re-wire and ensure a good grounding; 3. The encoder is faulty, replace the motor;"
+  },
+  {
+    "code": "Er.831",
+    "name": "AI zero drift is too large",
+    "resettable": "Yes",
+    "description": "When the input voltage of AI (including AI1 and AI2) terminals is 0V, the voltage sampled by the driver is greater than 500mV, Check AI input wiring, use shielded twisted pair."
+  },
+  {
+    "code": "Er.834",
+    "name": "AD sampling overvoltage",
+    "resettable": "Yes",
+    "description": "AI sampling value is greater than 11.5V 1. Check whether the input analog voltage value is too high; 2. Analog input port of the drive is faulty, replace the drive."
+  },
+  {
+    "code": "Er.835",
+    "name": "AD sampling failure",
+    "resettable": "Yes",
+    "description": "AD circuit is disturbed There is interference in the AI channel wiring, check the analog signal wiring, and use shielded twisted pair."
+  },
+  {
+    "code": "Er.A33",
+    "name": "Encoder data abnormal",
+    "resettable": "No",
+    "description": "The internal parameters of the encoder are abnormal 1. The serial encoder line is disconnected or loose, check or replace the encoder line and test; 2. The encoder is faulty, replace the motor;"
+  },
+  {
+    "code": "Er.A34",
+    "name": "Encoder loopback verification abnormal",
+    "resettable": "No",
+    "description": "1. The driver and motor types do not match, reset the motor model; 2. The encoder line is broken, check the encoder line."
+  },
+  {
+    "code": "Er.A35",
+    "name": "Z signal loss",
+    "resettable": "No",
+    "description": "Encoder Z signal is lost or the AB signal edge transitions at the same time 1. The serial encoder line is disconnected or loose, check or replace the encoder line and test; 2. The encoder is faulty, replace the motor;"
+  },
+  {
+    "code": "Er.B00",
+    "name": "Excessive position deviation",
+    "resettable": "Yes",
+    "description": "In position control mode, the position deviation is greater than the set value of P0A-10 1. The drive U V W output has phase loss or the phase sequence is wrongly connected, check the motor wire; 2. The motor is stalled, first eliminate the motor stall and then test, or remove the motor for no-load test; 3. The gain of servo drive is low, initialize the parameters and test; 4. The input pulse frequency is high, reduce the input pulse frequency; 5. Compared with the operating conditions, the fault value (P0A-10) is too small, increase P0A-10; 6. The torque limit value P07-09~P07-12 is set too small, initialize the parameters and test; 7. Servo drive/motor failure, replace the drive or motor."
+  },
+  {
+    "code": "Er.B01",
+    "name": "Abnormal pulse input",
+    "resettable": "Yes",
+    "description": "The input pulse frequency is greater than the maximum position pulse frequency (P0A-09) 1. Reduce the input pulse frequency; 2. Caused by input pulse interference, the pulse line should use twisted pair shielded wire and be properly grounded; 3. The pulse signal switching power supply is infected. Use the internal 24V power supply of the drive as the pulse signal power supply."
+  },
+  {
+    "code": "Er.B03",
+    "name": "Electronic gear ratio setting exceeds the limit",
+    "resettable": "Yes",
+    "description": "A group of electronic gear ratio exceeds the limit value, check the electronic gear ratio setting value."
+  },
+  {
+    "code": "Er.110",
+    "name": "Frequency division pulse output setting failure",
+    "resettable": "Yes",
+    "description": "When using the encoder frequency division output function (P05-38=0), the set encoder frequency division pulse number does not meet the threshold determined by the encoder specification, reset the encoder frequency division pulse number (P05-17) to make it meet the specified range."
+  },
+  {
+    "code": "Er.601",
+    "name": "Homing failed",
+    "resettable": "Yes",
+    "description": "When using the homing function (P05-30=1~5), the home is not found within the time set by P05-35, 1. Increase the time of P05-35; 2. Check whether the home signal is valid, change the home set point, or change the home search direction;"
+  },
+  {
+    "code": "Er.730",
+    "name": "Encoder battery warning",
+    "resettable": "Yes",
+    "description": "The battery voltage of the absolute value encoder is lower than 3.0V. Replace the battery with a new one that matches the voltage in the power-on state."
+  },
+  {
+    "code": "Er.831",
+    "name": "AI zero drift is too large",
+    "resettable": "Yes",
+    "description": "When the input voltage of AI (including AI1 and AI2) terminals is 0V, the voltage sampled by the driver is greater than 500mV, Check AI input wiring, use shielded twisted pair."
+  },
+  {
+    "code": "Er.900",
+    "name": "DI emergency stop",
+    "resettable": "Yes",
+    "description": "DI terminal corresponding to DI function 34 (FunIN.34: brake, Emergency) is triggered (including hardware DI and virtual DI), check the DI wiring."
+  },
+  {
+    "code": "Er.909",
+    "name": "Motor overload warning",
+    "resettable": "Yes",
+    "description": "The load rate is too high and causes a warning; check whether the load is too heavy or there is a stall condition."
+  },
+  {
+    "code": "Er.920",
+    "name": "Braking resistor overload",
+    "resettable": "Yes",
+    "description": "Braking resistor current excessive warning 1. Check if the bus voltage is too high and the energy discharges too quickly; add a voltage regulator and reduce the voltage; 2. Check if the motor decelerates too fast, increase the deceleration time; 3. The power of the internal braking resistor is insufficient. Replace the external braking resistor. It is recommended that the resistance value should not be lower than 35 ohms. 4. When using an external resistor, check the parameter values of P02-25 ~ P2-27, and set the value of P2-27 to be consistent with the resistance value of the selected resistor; 4. The brake circuit of the drive is damaged, replace the drive;"
+  },
+  {
+    "code": "Er.922",
+    "name": "External braking resistor is too small",
+    "resettable": "Yes",
+    "description": "P02-27 (resistance value of external braking resistor) is less than P02-21 (minimum value of external braking resistor allowed by the drive)"
+  },
+  {
+    "code": "Er.939",
+    "name": "Motor power line is disconnected",
+    "resettable": "Yes",
+    "description": "The actual phase current of the motor is less than 10% of the rated current, and the actual speed is small, but the internal torque command is large, check the wiring of the motor power cable, rewire, and replace the cable if necessary"
+  },
+  {
+    "code": "Er.941",
+    "name": "Changed parameters take effect after powering on again",
+    "resettable": "Yes",
+    "description": "When the function code attribute “Effective time” of the servo drive is “power on again”, the drive reminds the user that it needs to be powered on again after the parameter value of the function code is changed"
+  },
+  {
+    "code": "Er.942",
+    "name": "Frequent parameter storage",
+    "resettable": "Yes",
+    "description": "If the number of function codes modified at the same time exceeds 200, check the operation mode. For parameters that do not need to be stored in EEPROM, set P0C-13 to 0 before the host computer writes"
+  },
+  {
+    "code": "Er.950",
+    "name": "Forward overtravel warning",
+    "resettable": "Yes",
+    "description": "The corresponding DI terminal of DI function 14 (FunIN.14: P-OT, forward overtravel switch) is triggered."
+  },
+  {
+    "code": "Er.952",
+    "name": "Reverse overtravel warning",
+    "resettable": "Yes",
+    "description": "The corresponding DI terminal of DI function 15 (FunIN.15: N-OT, reverse overtravel switch) is triggered."
+  },
+  {
+    "code": "Er.980",
+    "name": "Encoder internal fault",
+    "resettable": "Yes",
+    "description": "The encoder algorithm is faulty; if the fault is still reported after turning on the power for many times, replace the motor."
+  },
+  {
+    "code": "Er.A40",
+    "name": "Internal failure",
+    "resettable": "Yes",
+    "description": "Motor self-learning failed 1. Check the motor encoder line error; 2. The encoder model is wrong, reset the motor model and encoder type; 3. The motor encoder is faulty, replace the motor."
+  }
+]
