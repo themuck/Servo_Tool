@@ -115,3 +115,9 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
 
 5.  **Schritt 4: Konfiguration sichern**
     *   Ein funktionierendes Tuning ist wertvoll. Sichern Sie es über `Datei -> Alle Register exportieren...`.
+    *   
+<img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/a069f7c6-ab77-4cc7-825a-13b370752467" />
+
+<img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/66d4305a-dfa5-4de7-9c94-7bf85cf950c2" />
+
+
