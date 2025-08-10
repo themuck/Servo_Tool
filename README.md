@@ -39,8 +39,8 @@ Ein Desktop-Tool zur Analyse, Konfiguration und zum Tuning von **Lichuan A5 Serv
 
 1.  **Repository klonen:**
     ```bash
-    git clone https://github.com/IhrBenutzername/IhrRepoName.git
-    cd IhrRepoName
+    git clone https://github.com/themuck/Servo_Tool.git
+    cd Servo_Tool
     ```
 
 2.  **Virtuelle Umgebung erstellen (dringend empfohlen):**
@@ -120,3 +120,4 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
 <img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/a069f7c6-ab77-4cc7-825a-13b370752467" />
 
 <img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/66d4305a-dfa5-4de7-9c94-7bf85cf950c2" />
+
