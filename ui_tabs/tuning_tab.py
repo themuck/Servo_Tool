@@ -115,6 +115,10 @@ class TuningTab(QWidget):
             read_btn.setFixedSize(button_width, button_height)
             write_btn.setFixedSize(button_width, button_height)
             
+            # Verbinde die Buttons mit den neuen Methoden zur Dezimalstellenbehandlung
+            read_btn.clicked.connect(lambda checked=False, a=attr_name: self.read_parameter(a))
+            write_btn.clicked.connect(lambda checked=False, a=attr_name: self.write_parameter(a))
+            
             h_layout = QHBoxLayout()
             h_layout.addWidget(widget)
             h_layout.addWidget(read_btn)
@@ -148,6 +152,11 @@ class TuningTab(QWidget):
             button_height = 25
             read_btn.setFixedSize(button_width, button_height)
             write_btn.setFixedSize(button_width, button_height)
+            
+            # Verbinde die Buttons mit den neuen Methoden zur Dezimalstellenbehandlung
+            read_btn.clicked.connect(lambda checked=False, a="p0200": self.read_parameter(a))
+            write_btn.clicked.connect(lambda checked=False, a="p0200": self.write_parameter(a))
+            
             # Set a reasonable maximum width for the combo box
             self.p0200_widget.setMaximumWidth(150)
             h_layout = QHBoxLayout()
@@ -240,6 +249,10 @@ class TuningTab(QWidget):
                 le, send_btn = QLineEdit("0"), QPushButton(self.main_app.language_manager.get_text("button_send"))
                 # Set uniform size for send button
                 send_btn.setFixedSize(80, 25)
+                
+                # Verbinde den Send-Button mit der neuen Methode zur Dezimalstellenbehandlung
+                send_btn.clicked.connect(lambda checked=False, a=attr_name: self.send_direct_command(a))
+                
                 # Set a reasonable maximum width for the text field to leave space for labels
                 le.setMaximumWidth(100)
                 h_layout = QHBoxLayout(); h_layout.addWidget(le); h_layout.addWidget(send_btn)
@@ -821,10 +834,53 @@ class TuningTab(QWidget):
         if v_type == 'range':
             min_val = param.validation.get('min', 'N/A')
             max_val = param.validation.get('max', 'N/A')
+            
+            # Berücksichtige Dezimalstellen bei der Anzeige des Bereichs
+            decimal_places = param.validation.get('decimal_places', 0)
+            if decimal_places > 0 and min_val != 'N/A' and max_val != 'N/A':
+                try:
+                    min_val_float = float(min_val) / (10 ** decimal_places)
+                    max_val_float = float(max_val) / (10 ** decimal_places)
+                    return f"{self.main_app.language_manager.get_text('validation_range')}: {min_val_float:.{decimal_places}f} ~ {max_val_float:.{decimal_places}f}"
+                except (ValueError, TypeError):
+                    # Fallback bei Konvertierungsfehlern
+                    pass
+            
             return f"{self.main_app.language_manager.get_text('validation_range')}: {min_val} ~ {max_val}"
         elif v_type == 'enum':
             return f"{self.main_app.language_manager.get_text('validation_options')}: {', '.join(param.validation.get('options', {}).values())}"
         return self.main_app.language_manager.get_text("validation_see_register_overview")
+
+    def _get_readable_value(self, value, param):
+        """Konvertiert einen Rohwert in einen anzeigbaren Wert mit Dezimalstellen"""
+        if value is None or value == '':
+            return ''
+        
+        decimal_places = param.validation.get('decimal_places', 0)
+        if decimal_places > 0:
+            try:
+                float_value = float(value) / (10 ** decimal_places)
+                return f"{float_value:.{decimal_places}f}"
+            except (ValueError, TypeError):
+                # Fallback bei Konvertierungsfehlern
+                return str(value)
+        return str(value)
+    
+    def _convert_to_raw_value(self, display_value, param):
+        """Konvertiert einen angezeigten Wert mit Dezimalstellen in einen Rohwert für Modbus"""
+        if display_value is None or display_value == '':
+            return None
+        
+        decimal_places = param.validation.get('decimal_places', 0)
+        if decimal_places > 0:
+            try:
+                float_value = float(display_value)
+                raw_value = int(float_value * (10 ** decimal_places))
+                return str(raw_value)
+            except (ValueError, TypeError):
+                # Fallback bei Konvertierungsfehlern
+                return display_value
+        return display_value
 
     def toggle_gain_set_view(self):
         is_set1_visible = self.gain_set1_group.isVisible()
@@ -1095,4 +1151,93 @@ class TuningTab(QWidget):
     def is_vdo_polling_enabled(self):
         """Gibt zurück, ob VDO-Polling aktiviert ist"""
         return self.vdo_polling_checkbox and self.vdo_polling_checkbox.isChecked()
+    
+    def read_parameter(self, attr_name):
+        """Liest einen Parameter vom Modbus-Gerät und zeigt ihn mit korrekter Dezimalformatierung an"""
+        if attr_name not in self.tuning_widgets:
+            return False
+        
+        widget_info = self.tuning_widgets[attr_name]
+        param = widget_info["param"]
+        widget = widget_info["widget"]
+        
+        try:
+            # Import ModbusHelper
+            from utils.modbus_helpers import ModbusHelper
+            
+            # Use ModbusHelper to read parameter with proper decimal formatting
+            result = ModbusHelper.read_parameter_safely(self.main_app.modbus_client, param, self.main_app.status_label)
+            
+            if result and len(result) == 3:
+                raw_value, display_value, error = result
+                
+                if error:
+                    logger.error(f"Fehler beim Lesen von {param.code}: {error}")
+                    widget.setText(self.main_app.language_manager.get_text("text_error"))
+                    return False
+                else:
+                    widget.setText(display_value)
+                    return True
+            else:
+                widget.setText(self.main_app.language_manager.get_text("text_not_available"))
+                return False
+        except Exception as e:
+            logger.error(f"Fehler beim Lesen von {param.code}: {e}")
+            widget.setText(self.main_app.language_manager.get_text("text_error"))
+            return False
+    
+    def write_parameter(self, attr_name):
+        """Schreibt einen Parameter zum Modbus-Gerät mit korrekter Dezimalstellenkonvertierung"""
+        if attr_name not in self.tuning_widgets:
+            return False
+        
+        widget_info = self.tuning_widgets[attr_name]
+        param = widget_info["param"]
+        widget = widget_info["widget"]
+        
+        try:
+            display_value = widget.text()
+            if not display_value:
+                return False
+            
+            # Konvertieren des angezeigten Werts in einen Rohwert für Modbus
+            raw_value = self._convert_to_raw_value(display_value, param)
+            if raw_value is None:
+                return False
+            
+            # Schreiben des Rohwerts zum Modbus-Gerät
+            success = self.main_app.modbus_client.write_parameter(param.code, raw_value)
+            if success:
+                # Zurücklesen und Anzeigen des bestätigten Werts
+                self.read_parameter(attr_name)
+            return success
+        except Exception as e:
+            logger.error(f"Fehler beim Schreiben von {param.code}: {e}")
+            return False
+    
+    def send_direct_command(self, attr_name):
+        """Sendet einen direkten Befehl mit korrekter Dezimalstellenkonvertierung"""
+        if attr_name not in self.direct_cmd_widgets:
+            return False
+        
+        widget_info = self.direct_cmd_widgets[attr_name]
+        param = widget_info["param"]
+        widget = widget_info["widget"]
+        
+        try:
+            display_value = widget.text()
+            if not display_value:
+                return False
+            
+            # Konvertieren des angezeigten Werts in einen Rohwert für Modbus
+            raw_value = self._convert_to_raw_value(display_value, param)
+            if raw_value is None:
+                return False
+            
+            # Senden des Rohwerts zum Modbus-Gerät
+            success = self.main_app.modbus_client.write_parameter(param.code, raw_value)
+            return success
+        except Exception as e:
+            logger.error(f"Fehler beim Senden von {param.code}: {e}")
+            return False
         

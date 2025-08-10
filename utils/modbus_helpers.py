@@ -132,18 +132,20 @@ class ModbusHelper:
             
             if val is not None:
                 logger.debug(f"DEBUG: Parameter {param.code} erfolgreich gelesen: {val}")
-                return val, None
+                # Wandle den Rohwert in einen anzeigbaren Wert mit Dezimalstellen um
+                display_value = ModbusHelper._get_readable_value(val, param)
+                return val, display_value, None
             else:
                 error_msg = f"Fehler beim Lesen von {param.code}"
                 if status_label:
                     status_label.setText(error_msg)
-                return None, error_msg
+                return None, None, error_msg
         except Exception as e:
             error_type = ModbusHelper.handle_modbus_error(e, param.code, "Lesen")
             error_msg = f"{error_type.replace('_', ' ').title()} beim Lesen von {param.code}"
             if status_label:
                 status_label.setText(error_msg)
-            return None, error_msg
+            return None, None, error_msg
     
     @staticmethod
     def write_parameter_safely(modbus_client, param, value, status_label=None):
@@ -209,9 +211,13 @@ class ModbusHelper:
             
             if val is not None:
                 logger.debug(f"DEBUG: Parameter {param.code} erfolgreich gelesen: {val}")
-                widget.setText(str(val))
+                
+                # Wandle den Rohwert in einen anzeigbaren Wert mit Dezimalstellen um
+                display_value = ModbusHelper._get_readable_value(val, param)
+                widget.setText(display_value)
+                
                 if status_label:
-                    status_label.setText(f"{param.code} erfolgreich gelesen: {val}")
+                    status_label.setText(f"{param.code} erfolgreich gelesen: {display_value}")
             else:
                 error_msg = f"Fehler beim Lesen von {param.code}"
                 if status_label:
@@ -293,6 +299,26 @@ class ModbusHelper:
                     status_label.setText(error_msg)
         except Exception as e:
             ModbusHelper._handle_ui_error(e, param.code, "Lesen", status_label, disconnect_callback)
+    
+    @staticmethod
+    def _get_readable_value(value, param):
+        """Konvertiert einen Rohwert in einen anzeigbaren Wert mit Dezimalstellen"""
+        if value is None or value == '':
+            return ''
+        
+        # Handle decimal places for range values
+        if param.validation and param.validation.get('type') == 'range':
+            decimal_places = param.validation.get('decimal_places', 0)
+            if decimal_places > 0:
+                try:
+                    # Convert raw value to displayed value with decimal places
+                    float_value = float(value) / (10 ** decimal_places)
+                    return f"{float_value:.{decimal_places}f}"
+                except (ValueError, TypeError):
+                    # Fallback bei Konvertierungsfehlern
+                    return str(value)
+        
+        return str(value)
 
 
 class UIHelper:

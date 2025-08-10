@@ -10,7 +10,9 @@
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -24,14 +26,16 @@
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-00",
     "name": "Control mode selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0200",
     "decimal": 512,
     "validation": {
@@ -40,18 +44,20 @@
         "0": "Speed mode",
         "1": "Position mode",
         "2": "Torque mode",
-        "3": "Torque mode ↔ speed mode",
-        "4": "Speed mode↔position mode",
-        "5": "Torque mode↔position mode",
-        "6": "Torque↔speed↔position hybrid mode"
-      }
+        "3": "Torque mode \u2194 speed mode",
+        "4": "Speed mode\u2194position mode",
+        "5": "Torque mode\u2194position mode",
+        "6": "Torque\u2194speed\u2194position hybrid mode"
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-01",
     "name": "Encoder type selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0201",
     "decimal": 513,
     "validation": {
@@ -59,14 +65,16 @@
       "options": {
         "0": "Incremental encoder",
         "1": "Absolute value encoder"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-02",
     "name": "Rotation direction selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0202",
     "decimal": 514,
     "validation": {
@@ -74,14 +82,16 @@
       "options": {
         "0": "CCW direction is the forward rotation direction (A leads B)",
         "1": "CW direction is the forward rotation direction (A lags B)"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-03",
     "name": "Output pulse phase",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0203",
     "decimal": 515,
     "validation": {
@@ -89,14 +99,16 @@
       "options": {
         "0": "CCW direction is the forward rotation direction (A leads B)",
         "1": "CW direction is the forward rotation direction (reverse mode"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-05",
     "name": "Servo enable OFF stop mode selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0205",
     "decimal": 517,
     "validation": {
@@ -104,14 +116,16 @@
       "options": {
         "0": "Free stop",
         "1": "Stop at zero speed"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-06",
     "name": "Fault No.2 stop mode selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0206",
     "decimal": 518,
     "validation": {
@@ -119,14 +133,16 @@
       "options": {
         "0": "Free stop",
         "1": "Stop at zero speed"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-07",
     "name": "Overtravel stop mode selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0207",
     "decimal": 519,
     "validation": {
@@ -135,84 +151,96 @@
         "0": "Free stop",
         "1": "Stop at zero speed",
         "2": "Stop at zero speed"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-08",
     "name": "Fault No.1 stop mode selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0208",
     "decimal": 520,
     "validation": {
       "type": "enum",
       "options": {
         "0": "Free stop"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-09",
     "name": "Brake output ON to command receiving delay",
     "unit": "ms",
-    "default": "250",
+    "default": 250,
     "hex": "0x0209",
     "decimal": 521,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 500,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-10",
     "name": "Standstill state delay time from brake output OFF to motor power off",
     "unit": "ms",
-    "default": "150",
+    "default": 150,
     "hex": "0x020A",
     "decimal": 522,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-11",
     "name": "Rotating state speed threshold value when brake output is OFF",
     "unit": "rpm",
-    "default": "30",
+    "default": 30,
     "hex": "0x020B",
     "decimal": 523,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-12",
     "name": "Rotating state delay time from servo enable OFF to brake output OFF",
     "unit": "ms",
-    "default": "500",
+    "default": 500,
     "hex": "0x020C",
     "decimal": 524,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-15",
     "name": "LED warning display selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x020F",
     "decimal": 527,
     "validation": {
@@ -220,30 +248,38 @@
       "options": {
         "0": "Output warning information immediately",
         "1": "Do not output warning information"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-18",
     "name": "Servo enable (S-ON) Filtering time constant",
     "unit": "ms",
-    "default": "0",
+    "default": 0,
     "hex": "0x0212",
     "decimal": 530,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 64,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-21",
     "name": "Minimum braking resistance allowed by the drive",
-    "unit": "Ω",
+    "unit": "\u03a9",
     "default": "-",
     "hex": "0x0215",
-    "decimal": 533
+    "decimal": 533,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P02-22",
@@ -251,35 +287,45 @@
     "unit": "W",
     "default": "-",
     "hex": "0x0216",
-    "decimal": 534
+    "decimal": 534,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P02-23",
     "name": "Resistance of built-in braking resistor",
-    "unit": "Ω",
+    "unit": "\u03a9",
     "default": "-",
     "hex": "0x0217",
-    "decimal": 535
+    "decimal": 535,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P02-24",
     "name": "Resistor heat dissipation coefficient",
     "unit": "%",
-    "default": "30",
+    "default": 30,
     "hex": "0x0218",
     "decimal": 536,
     "validation": {
       "type": "range",
       "min": 10,
       "max": 100,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-25",
     "name": "Braking resistor setting",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0219",
     "decimal": 537,
     "validation": {
@@ -289,7 +335,9 @@
         "1": "Use external braking resistor",
         "2": "Use external braking resistor",
         "3": "No braking resistor"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -303,13 +351,15 @@
       "type": "range",
       "min": 1,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-27",
     "name": "Resistance of external braking resistor",
-    "unit": "Ω",
+    "unit": "\u03a9",
     "default": "-",
     "hex": "0x021B",
     "decimal": 539,
@@ -317,14 +367,16 @@
       "type": "range",
       "min": 1,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-31",
     "name": "Initialize system parameters",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x021F",
     "decimal": 543,
     "validation": {
@@ -333,56 +385,64 @@
         "0": "No operation",
         "1": "Restore default value (except P00/P01 set)",
         "2": "Clear fault records"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-32",
     "name": "Panel default display function",
     "unit": "-",
-    "default": "50",
+    "default": 50,
     "hex": "0x0220",
     "decimal": 544,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 99,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-38",
     "name": "Fault short circuit braking time",
     "unit": "ms",
-    "default": "5000",
+    "default": 5000,
     "hex": "0x0226",
     "decimal": 550,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 30000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P02-39",
     "name": "Fault short circuit braking threshold",
     "unit": "0.1%",
-    "default": "1000",
+    "default": 1000,
     "hex": "0x0227",
     "decimal": 551,
     "validation": {
       "type": "enum",
       "options": {
         "0": "3000"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-00",
     "name": "Power-on valid DI functions Assignment 1",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0300",
     "decimal": 768,
     "validation": {
@@ -393,14 +453,16 @@
         "0": "Corresponding to FunIN.1",
         "1": "Corresponding to FunIN.2",
         "15": "Corresponding to FunIN.16"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-01",
     "name": "Power-on valid DI functions Assignment 2",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0301",
     "decimal": 769,
     "validation": {
@@ -411,26 +473,30 @@
         "0": "Corresponding to FunIN.17",
         "1": "Corresponding to FunIN.18",
         "15": "Corresponding to FunIN.32"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-02",
     "name": "DI1 terminal function selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0302",
     "decimal": 770,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
-  }
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P03-03",
     "name": "DI1 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0303",
     "decimal": 771,
     "validation": {
@@ -441,196 +507,226 @@
         "2": "Means active on rising edge",
         "3": "Means active on falling edge",
         "4": "Means active on both rising and falling edges"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-04",
     "name": "DI2 terminal function selection",
     "unit": "-",
-    "default": "14",
+    "default": 14,
     "hex": "0x0304",
     "decimal": 772,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
-  }
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P03-05",
     "name": "DI2 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0305",
     "decimal": 773,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-06",
     "name": "DI3 terminal function selection",
     "unit": "-",
-    "default": "15",
+    "default": 15,
     "hex": "0x0306",
     "decimal": 774,
     "validation": {
       "type": "enum",
-      "options_ref": "servo_FunIN.json"
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-07",
     "name": "DI3 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0307",
     "decimal": 775,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-08",
     "name": "DI4 terminal function selection",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x0308",
     "decimal": 776,
     "validation": {
       "type": "enum",
-      "options_ref": "servo_FunIN.json"
-  }
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P03-09",
     "name": "DI4 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0309",
     "decimal": 777,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-10",
     "name": "DI5 terminal function selection",
     "unit": "-",
-    "default": "26",
+    "default": 26,
     "hex": "0x030A",
     "decimal": 778,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-11",
     "name": "DI5 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x030B",
     "decimal": 779,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-12",
     "name": "DI6 terminal function selection",
     "unit": "-",
-    "default": "34",
+    "default": 34,
     "hex": "0x030C",
     "decimal": 780,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-13",
     "name": "DI6 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x030D",
     "decimal": 781,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-14",
     "name": "DI7 terminal function selection",
     "unit": "-",
-    "default": "31",
+    "default": 31,
     "hex": "0x030E",
     "decimal": 782,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-15",
     "name": "DI7 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x030F",
     "decimal": 783,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-16",
     "name": "DI8 terminal function selection",
     "unit": "-",
-    "default": "32",
+    "default": 32,
     "hex": "0x0310",
     "decimal": 784,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-17",
     "name": "DI8 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0311",
     "decimal": 785,
     "validation": {
       "type": "enum",
       "options": {
         "03": "03"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-34",
     "name": "Power-on valid DI functions Assignment 3",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0322",
     "decimal": 802,
     "validation": {
@@ -641,14 +737,16 @@
         "0": "Corresponding to FunIN.33",
         "1": "Corresponding to FunIN.34",
         "15": "Corresponding to FunIN.48"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-35",
     "name": "Power-on valid DI functions Assignment 4",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0323",
     "decimal": 803,
     "validation": {
@@ -659,166 +757,190 @@
         "0": "Corresponding to FunIN.49",
         "1": "Corresponding to FunIN.50",
         "15": "Corresponding to FunIN.64"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-36",
     "name": "AI1 offset",
     "unit": "mV",
-    "default": "0",
+    "default": 0,
     "hex": "0x0324",
     "decimal": 804,
     "validation": {
       "type": "range",
       "min": -5000,
       "max": 5000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P03-37",
     "name": "AI1 input filter time Constant",
     "unit": "ms",
-    "default": "200",
+    "default": 200,
     "hex": "0x0325",
     "decimal": 805,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P03-39",
     "name": "AI1 dead zone",
     "unit": "mV",
-    "default": "100",
+    "default": 100,
     "hex": "0x0327",
     "decimal": 807,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P03-40",
     "name": "AI1 zero drift",
     "unit": "mV",
-    "default": "0",
+    "default": 0,
     "hex": "0x0328",
     "decimal": 808,
     "validation": {
       "type": "range",
       "min": -5000,
       "max": 5000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": true
     }
   },
   {
     "code": "P03-41",
     "name": "AI2 offset",
     "unit": "mV",
-    "default": "0",
+    "default": 0,
     "hex": "0x0329",
     "decimal": 809,
     "validation": {
       "type": "range",
       "min": -5000,
       "max": 5000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P03-42",
     "name": "AI2 input filter time Constant",
     "unit": "ms",
-    "default": "200",
+    "default": 200,
     "hex": "0x032A",
     "decimal": 810,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P03-44",
     "name": "AI2 dead zone",
     "unit": "mV",
-    "default": "100",
+    "default": 100,
     "hex": "0x032C",
     "decimal": 812,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P03-45",
     "name": "AI2 zero drift",
     "unit": "mV",
-    "default": "0",
+    "default": 0,
     "hex": "0x032D",
     "decimal": 813,
     "validation": {
       "type": "range",
       "min": -5000,
       "max": 5000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": true
     }
   },
   {
     "code": "P03-51",
     "name": "Analog 10V corresponding speed value",
     "unit": "rpm",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x0333",
     "decimal": 819,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 9000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P03-52",
     "name": "Analog 10V corresponding torque value",
     "unit": "times rated torque",
-    "default": "100",
+    "default": 100,
     "hex": "0x0334",
     "decimal": 820,
     "validation": {
       "type": "range",
       "min": 100,
       "max": 800,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P04-00",
     "name": "DO1 terminal function selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0400",
     "decimal": 1024,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-01",
     "name": "DO1 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0401",
     "decimal": 1025,
     "validation": {
@@ -826,144 +948,166 @@
       "options": {
         "0": "Output L low level when active (optocoupler is turned on)",
         "1": "Output H high level when active (optocoupler is turned off)"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-02",
     "name": "DO2 terminal function selection",
     "unit": "-",
-    "default": "5",
+    "default": 5,
     "hex": "0x0402",
     "decimal": 1026,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-03",
     "name": "DO2 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0403",
     "decimal": 1027,
     "validation": {
       "type": "enum",
       "options": {
         "04": "01"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-04",
     "name": "DO3 terminal function selection",
     "unit": "-",
-    "default": "3",
+    "default": 3,
     "hex": "0x0404",
     "decimal": 1028,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-05",
     "name": "DO3 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0405",
     "decimal": 1029,
     "validation": {
       "type": "enum",
       "options": {
         "04": "01"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-06",
     "name": "DO4 terminal function selection",
     "unit": "-",
-    "default": "11",
+    "default": 11,
     "hex": "0x0406",
     "decimal": 1030,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-07",
     "name": "DO4 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0407",
     "decimal": 1031,
     "validation": {
       "type": "enum",
       "options": {
         "04": "01"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-08",
     "name": "DO5 terminal function selection",
     "unit": "-",
-    "default": "16",
+    "default": 16,
     "hex": "0x0408",
     "decimal": 1032,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-09",
     "name": "DO5 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0409",
     "decimal": 1033,
     "validation": {
       "type": "enum",
       "options": {
         "04": "01"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-10",
     "name": "DO6 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x040A",
     "decimal": 1034,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P04-11",
     "name": "DO6 terminal logic selection",
     "unit": "-",
-    "default": "9",
+    "default": 9,
     "hex": "0x040B",
     "decimal": 1035,
     "validation": {
       "type": "enum",
       "options": {
         "04": "01"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-00",
     "name": "Position command source",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0500",
     "decimal": 1280,
     "validation": {
@@ -972,126 +1116,144 @@
         "0": "Pulse command",
         "1": "Step value given",
         "2": "Multi-segment position command given"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-02",
     "name": "Number of position commands per motor rotation",
     "unit": "P/r",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x0502",
     "decimal": 1282,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1048576,
-      "number_type": "unsigned_integer_32bit"
+      "number_type": "unsigned_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-04",
     "name": "First-order low-pass filter time constant",
     "unit": "ms",
-    "default": "0",
+    "default": 0,
     "hex": "0x0504",
     "decimal": 1284,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P05-05",
     "name": "Step amount",
     "unit": "Command Unit",
-    "default": "50",
+    "default": 50,
     "hex": "0x0505",
     "decimal": 1285,
     "validation": {
       "type": "range",
       "min": -9999,
       "max": 9999,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P05-06",
     "name": "Average filter time constant",
     "unit": "ms",
-    "default": "0",
+    "default": 0,
     "hex": "0x0506",
     "decimal": 1286,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1280,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P05-07",
     "name": "Electronic gear ratio 1 (numerator)",
     "unit": "-",
-    "default": "1048576",
+    "default": 1048576,
     "hex": "0x0507",
     "decimal": 1287,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1073741824,
-      "number_type": "unsigned_integer_32bit"
+      "number_type": "unsigned_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-09",
     "name": "Electronic gear ratio 1 (denominator)",
     "unit": "-",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x0509",
     "decimal": 1289,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1073741824,
-      "number_type": "unsigned_integer_32bit"
+      "number_type": "unsigned_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-11",
     "name": "Electronic gear ratio 2 (numerator)",
     "unit": "-",
-    "default": "1048576",
+    "default": 1048576,
     "hex": "0x050B",
     "decimal": 1291,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1073741824,
-      "number_type": "unsigned_integer_32bit"
+      "number_type": "unsigned_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-13",
     "name": "Electronic gear ratio 2 (denominator)",
     "unit": "-",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x050D",
     "decimal": 1293,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1073741824,
-      "number_type": "unsigned_integer_32bit"
+      "number_type": "unsigned_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-15",
     "name": "Pulse command form",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x050F",
     "decimal": 1295,
     "validation": {
@@ -1101,14 +1263,16 @@
         "1": "Pulse + direction",
         "2": "A + B-phase quadrature pulse",
         "4": "CW+CCW"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-16",
     "name": "Clear action selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0510",
     "decimal": 1296,
     "validation": {
@@ -1117,28 +1281,32 @@
         "0": "Servo enable OFF or clear position deviation when fault occurs",
         "1": "Clear position deviation pulse when fault or warning occurs",
         "2": "Enable OFF and clear position deviation through DI input ClrPosErr signal"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-17",
     "name": "Encoder frequency division pulse number",
     "unit": "P/r",
-    "default": "2500",
+    "default": 2500,
     "hex": "0x0511",
     "decimal": 1297,
     "validation": {
       "type": "range",
       "min": 35,
       "max": 32767,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-19",
     "name": "Speed feedforward control selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0513",
     "decimal": 1299,
     "validation": {
@@ -1148,14 +1316,16 @@
         "1": "Internal speed feedforward",
         "2": "Use AI1 as speed feedforward input",
         "3": "Use AI2 as speed feedforward input"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-20",
     "name": "Positioning complete output condition",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0514",
     "decimal": 1300,
     "validation": {
@@ -1166,42 +1336,48 @@
         "2": "Output when the absolute value of the position deviation is less than P05-21 and the position command before filtering is 0",
         "3": "Output when the absolute value of the position deviation is less than the positioning completion/proximity threshold and the position command filter is 0",
         "05": "60"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-21",
     "name": "Positioning completion threshold",
     "unit": "Encoder Unit",
-    "default": "734",
+    "default": 734,
     "hex": "0x0515",
     "decimal": 1301,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-22",
     "name": "Positioning proximity threshold",
     "unit": "Encoder Unit",
-    "default": "65535",
+    "default": 65535,
     "hex": "0x0516",
     "decimal": 1302,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-30",
     "name": "Homing enable control",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x051E",
     "decimal": 1310,
     "validation": {
@@ -1215,14 +1391,16 @@
         "5": "Start homing command",
         "6": "Use current position as the home",
         "8": "Through the DI input signal"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-31",
     "name": "Homing mode",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x051F",
     "decimal": 1311,
     "validation": {
@@ -1238,84 +1416,96 @@
         "7": "Reverse homing",
         "8": "Positive homing",
         "9": "Reverse homing"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-32",
     "name": "Speed of high-speed search home switch signal",
     "unit": "rpm",
-    "default": "100",
+    "default": 100,
     "hex": "0x0520",
     "decimal": 1312,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-33",
     "name": "Speed of low-speed search home switch signal",
     "unit": "rpm",
-    "default": "10",
+    "default": 10,
     "hex": "0x0521",
     "decimal": 1313,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-34",
     "name": "Acceleration and deceleration time when searching for home",
     "unit": "ms",
-    "default": "1000",
+    "default": 1000,
     "hex": "0x0522",
     "decimal": 1314,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-35",
     "name": "Limit the time to find the home",
     "unit": "-",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x0523",
     "decimal": 1315,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-36",
     "name": "Machine home offset",
     "unit": "Command Unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0524",
     "decimal": 1316,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P05-38",
     "name": "Servo pulse output source selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0526",
     "decimal": 1318,
     "validation": {
@@ -1324,14 +1514,16 @@
         "0": "Encoder frequency division output",
         "1": "Pulse command synchronous output",
         "2": "Prohibit frequency division or synchronization output"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-39",
     "name": "Electronic gear ratio switching condition",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0527",
     "decimal": 1319,
     "validation": {
@@ -1339,14 +1531,16 @@
       "options": {
         "0": "The position command (referring to only the unit) is 0",
         "1": "Real-time switching"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-43",
     "name": "Position pulse edge selection",
     "unit": "1",
-    "default": "0",
+    "default": 0,
     "hex": "0x052B",
     "decimal": 1323,
     "validation": {
@@ -1354,56 +1548,64 @@
       "options": {
         "0": "Active on falling edge",
         "1": "Active on rising edge"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-59",
     "name": "Positioning completion window time",
     "unit": "ms",
-    "default": "1",
+    "default": 1,
     "hex": "0x053B",
     "decimal": 1339,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 30000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-60",
     "name": "Positioning completion hold time",
     "unit": "ms",
-    "default": "1",
+    "default": 1,
     "hex": "0x053C",
     "decimal": 1340,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 30000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P05-61",
     "name": "Limit the selection of time units for finding the origin",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x053D",
     "decimal": 1341,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 2,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-00",
     "name": "Main speed command A source",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0600",
     "decimal": 1536,
     "validation": {
@@ -1412,14 +1614,16 @@
         "0": "Given number (P06-03)",
         "1": "AI1",
         "2": "AI2"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-01",
     "name": "Auxiliary speed command B source",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0601",
     "decimal": 1537,
     "validation": {
@@ -1431,14 +1635,16 @@
         "3": "0 (no effect)",
         "4": "0 (no effect)",
         "5": "Multi-speed command"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-02",
     "name": "Speed command selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0602",
     "decimal": 1538,
     "validation": {
@@ -1448,196 +1654,224 @@
         "1": "Auxiliary speed command B source",
         "2": "A+B",
         "3": "A/B switching"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-03",
     "name": "Speed command keyboard setting value",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x0603",
     "decimal": 1539,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P06-04",
     "name": "Jog speed set value",
     "unit": "rpm",
-    "default": "100",
+    "default": 100,
     "hex": "0x0604",
     "decimal": 1540,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-05",
     "name": "Speed command acceleration ramp time constant",
     "unit": "ms",
-    "default": "200",
+    "default": 200,
     "hex": "0x0605",
     "decimal": 1541,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-06",
     "name": "Speed command deceleration ramp time constant",
     "unit": "ms",
-    "default": "200",
+    "default": 200,
     "hex": "0x0606",
     "decimal": 1542,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-07",
     "name": "Maximum speed threshold",
     "unit": "rpm",
-    "default": "5000",
+    "default": 5000,
     "hex": "0x0607",
     "decimal": 1543,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-08",
     "name": "Forward speed threshold",
     "unit": "rpm",
-    "default": "5000",
+    "default": 5000,
     "hex": "0x0608",
     "decimal": 1544,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-09",
     "name": "Reverse speed threshold",
     "unit": "rpm",
-    "default": "5000",
+    "default": 5000,
     "hex": "0x0609",
     "decimal": 1545,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-11",
     "name": "Torque feedforward control selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x060B",
     "decimal": 1547,
     "validation": {
       "type": "enum",
       "options": {
         "0": "Internal torque feedforward"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-15",
     "name": "Zero fixed speed threshold",
     "unit": "rpm",
-    "default": "10",
+    "default": 10,
     "hex": "0x060F",
     "decimal": 1551,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-16",
     "name": "Motor rotation speed threshold",
     "unit": "rpm",
-    "default": "20",
+    "default": 20,
     "hex": "0x0610",
     "decimal": 1552,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-17",
     "name": "Speed coincidence signal threshold",
     "unit": "rpm",
-    "default": "10",
+    "default": 10,
     "hex": "0x0611",
     "decimal": 1553,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 100,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-18",
     "name": "Speed reach signal threshold",
     "unit": "rpm",
-    "default": "1000",
+    "default": 1000,
     "hex": "0x0612",
     "decimal": 1554,
     "validation": {
       "type": "range",
       "min": 10,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P06-19",
     "name": "Zero-speed output signal threshold",
     "unit": "rpm",
-    "default": "10",
+    "default": 10,
     "hex": "0x0613",
     "decimal": 1555,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-00",
     "name": "Main torque command A source",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0700",
     "decimal": 1792,
     "validation": {
@@ -1646,14 +1880,16 @@
         "0": "Given number (P07-03)",
         "1": "AI1",
         "2": "AI2"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-01",
     "name": "Auxiliary torque command B source",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0701",
     "decimal": 1793,
     "validation": {
@@ -1662,14 +1898,16 @@
         "0": "Given number (P07-03)",
         "1": "AI1",
         "2": "AI2"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-02",
     "name": "Torque command selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0702",
     "decimal": 1794,
     "validation": {
@@ -1680,56 +1918,64 @@
         "2": "Main command A source + auxiliary command B source",
         "3": "Main command A source/auxiliary command B source switching",
         "4": "Communication given"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-03",
     "name": "Torque command keyboard setting value",
     "unit": "%",
-    "default": "0",
+    "default": 0,
     "hex": "0x0703",
     "decimal": 1795,
     "validation": {
       "type": "range",
       "min": -3000,
       "max": 3000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": true
     }
   },
   {
     "code": "P07-05",
     "name": "Torque command filter time constant",
     "unit": "ms",
-    "default": "79",
+    "default": 79,
     "hex": "0x0705",
     "decimal": 1797,
     "validation": {
       "type": "range",
       "min": 0,
-      "max": 300,
-      "number_type": "unsigned_integer_16bit"
+      "max": 3000,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P07-06",
     "name": "Second torque command filter time constant",
     "unit": "ms",
-    "default": "79",
+    "default": 79,
     "hex": "0x0706",
     "decimal": 1798,
     "validation": {
       "type": "range",
       "min": 0,
-      "max": 300,
-      "number_type": "unsigned_integer_16bit"
+      "max": 3000,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P07-07",
     "name": "Torque limit source",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0707",
     "decimal": 1799,
     "validation": {
@@ -1740,14 +1986,16 @@
         "2": "T-LMT is used as external torque limit input",
         "3": "Use the minimum value of positive and negative external torque and external T-LMT as the torque limit (selected by P-CL",
         "4": "Switch between positive and negative internal torque limit and T-LMT torque limit (selected by P-CL"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-08",
     "name": "T-LMT selection",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x0708",
     "decimal": 1800,
     "validation": {
@@ -1755,70 +2003,80 @@
       "options": {
         "1": "AI1",
         "2": "AI2"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-09",
     "name": "Positive internal torque limit",
     "unit": "%",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x0709",
     "decimal": 1801,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-10",
     "name": "Negative internal torque limit",
     "unit": "%",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x070A",
     "decimal": 1802,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-11",
     "name": "Positive external torque limit",
     "unit": "%",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x070B",
     "decimal": 1803,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-12",
     "name": "Negative external torque limit",
     "unit": "%",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x070C",
     "decimal": 1804,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-17",
     "name": "Speed limit source selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0711",
     "decimal": 1809,
     "validation": {
@@ -1827,14 +2085,16 @@
         "0": "Internal speed limit (speed limit during torque control)",
         "1": "Use V-LMT as external speed limit input",
         "2": "Select P07-19/ P07-20 as internal speed limit"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-18",
     "name": "V-LMT selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0712",
     "decimal": 1810,
     "validation": {
@@ -1842,182 +2102,208 @@
       "options": {
         "1": "AI1",
         "2": "AI2"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-19",
     "name": "Torque control forward speed limit /torque control speed limit 1",
     "unit": "rpm",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x0713",
     "decimal": 1811,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-20",
     "name": "Torque control negative speed limit/torque control speed limit 2",
     "unit": "rpm",
-    "default": "3000",
+    "default": 3000,
     "hex": "0x0714",
     "decimal": 1812,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P07-21",
     "name": "Torque reaching reference value",
     "unit": "%",
-    "default": "0",
+    "default": 0,
     "hex": "0x0715",
     "decimal": 1813,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-22",
     "name": "Torque reaching active value",
     "unit": "%",
-    "default": "200",
+    "default": 200,
     "hex": "0x0716",
     "decimal": 1814,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-23",
     "name": "Torque reaching inactive value",
     "unit": "%",
-    "default": "100",
+    "default": 100,
     "hex": "0x0717",
     "decimal": 1815,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 3000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P07-40",
     "name": "Speed limit window in torque mode",
     "unit": "ms",
-    "default": "10",
+    "default": 10,
     "hex": "0x0728",
     "decimal": 1832,
     "validation": {
       "type": "range",
       "min": 5,
       "max": 300,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-00",
     "name": "Speed loop gain",
     "unit": "Hz",
-    "default": "250",
+    "default": 250,
     "hex": "0x0800",
     "decimal": 2048,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 20000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-01",
     "name": "Speed loop integral time constant",
     "unit": "ms",
-    "default": "3183",
+    "default": 3183,
     "hex": "0x0801",
     "decimal": 2049,
     "validation": {
       "type": "range",
       "min": 15,
-      "max": 5120,
-      "number_type": "unsigned_integer_16bit"
+      "max": 51200,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P08-02",
     "name": "Position loop gain",
     "unit": "Hz",
-    "default": "400",
+    "default": 400,
     "hex": "0x0802",
     "decimal": 2050,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-03",
     "name": "2nd speed loop gain",
     "unit": "Hz",
-    "default": "400",
+    "default": 400,
     "hex": "0x0803",
     "decimal": 2051,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 20000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-04",
     "name": "2nd speed loop integral time constant",
     "unit": "ms",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x0804",
     "decimal": 2052,
     "validation": {
       "type": "range",
       "min": 15,
-      "max": 5120,
-      "number_type": "unsigned_integer_16bit"
+      "max": 51200,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P08-05",
     "name": "2nd position loop gain",
     "unit": "Hz",
-    "default": "640",
+    "default": 640,
     "hex": "0x0805",
     "decimal": 2053,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-08",
     "name": "Second gain mode setting",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0808",
     "decimal": 2056,
     "validation": {
@@ -2025,14 +2311,16 @@
       "options": {
         "0": "First gain fixed",
         "1": "Use gain switching according to the conditions of P08-09"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P08-09",
     "name": "Gain switching condition selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0809",
     "decimal": 2057,
     "validation": {
@@ -2049,140 +2337,160 @@
         "8": "Positioning completed (P)",
         "9": "Actual speed is high (P)",
         "10": "With position command + actual speed (P)"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P08-10",
     "name": "Gain switching delay time",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x080A",
     "decimal": 2058,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-11",
     "name": "Gain switching level",
     "unit": "-",
-    "default": "50",
+    "default": 50,
     "hex": "0x080B",
     "decimal": 2059,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P08-12",
     "name": "Gain switching time lag",
     "unit": "-",
-    "default": "30",
+    "default": 30,
     "hex": "0x080C",
     "decimal": 2060,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P08-13",
     "name": "Position gain switching time",
     "unit": "ms",
-    "default": "30",
+    "default": 30,
     "hex": "0x080D",
     "decimal": 2061,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-15",
     "name": "Load inertia ratio",
     "unit": "Times",
-    "default": "100",
+    "default": 100,
     "hex": "0x080F",
     "decimal": 2063,
     "validation": {
       "type": "range",
       "min": 0,
-      "max": 1200,
-      "number_type": "unsigned_integer_16bit"
+      "max": 12000,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P08-18",
     "name": "Speed feedforward filter time constant",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x0812",
     "decimal": 2066,
     "validation": {
       "type": "range",
       "min": 0,
-      "max": 640,
-      "number_type": "unsigned_integer_16bit"
+      "max": 6400,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P08-19",
     "name": "Speed feedforward gain",
     "unit": "%",
-    "default": "0",
+    "default": 0,
     "hex": "0x0813",
     "decimal": 2067,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-20",
     "name": "Torque feedforward filter time constant",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x0814",
     "decimal": 2068,
     "validation": {
       "type": "range",
       "min": 0,
-      "max": 640,
-      "number_type": "unsigned_integer_16bit"
+      "max": 6400,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P08-21",
     "name": "Torque feedforward gain",
     "unit": "%",
-    "default": "0",
+    "default": 0,
     "hex": "0x0815",
     "decimal": 2069,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 2000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P08-22",
     "name": "Velocity feedback filter options",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0816",
     "decimal": 2070,
     "validation": {
@@ -2193,56 +2501,64 @@
         "2": "Speed feedback 4 times average filter",
         "3": "Speed feedback 8 times average filter",
         "4": "Speed feedback 16 times average filter"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P08-23",
     "name": "Speed feedback low-pass filter cutoff frequency",
     "unit": "Hz",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x0817",
     "decimal": 2071,
     "validation": {
       "type": "range",
       "min": 100,
       "max": 4000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P08-24",
     "name": "Pseudo-differential feedforward control coefficient",
     "unit": "-",
-    "default": "1000",
+    "default": 1000,
     "hex": "0x0818",
     "decimal": 2072,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P09-01",
     "name": "Rigidity grade selection",
     "unit": "-",
-    "default": "12",
+    "default": 12,
     "hex": "0x0901",
     "decimal": 2305,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 31,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-02",
     "name": "Adaptive notch filter mode selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0902",
     "decimal": 2306,
     "validation": {
@@ -2254,14 +2570,16 @@
         "3": "Only test the resonance point",
         "09": "24",
         "4": "Restore the values of the 3rd and 4th notch filters to the default"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-04",
     "name": "Low frequency resonance suppression mode selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0904",
     "decimal": 2308,
     "validation": {
@@ -2269,14 +2587,16 @@
       "options": {
         "0": "Manually set vibration frequency",
         "1": "Automatically identify vibration frequency"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-05",
     "name": "Offline inertia identification mode selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0905",
     "decimal": 2309,
     "validation": {
@@ -2284,49 +2604,57 @@
       "options": {
         "0": "Positive and negative triangle wave mode",
         "1": "JOG mode"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-06",
     "name": "Inertia identification maximum speed",
     "unit": "rpm",
-    "default": "500",
+    "default": 500,
     "hex": "0x0906",
     "decimal": 2310,
     "validation": {
       "type": "range",
       "min": 100,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-07",
     "name": "Time constant of accelerate to maximum speed during inertia identification",
     "unit": "ms",
-    "default": "125",
+    "default": 125,
     "hex": "0x0907",
     "decimal": 2311,
     "validation": {
       "type": "range",
       "min": 20,
       "max": 800,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-08",
     "name": "Waiting time after a single inertia identification is completed",
     "unit": "ms",
-    "default": "800",
+    "default": 800,
     "hex": "0x0908",
     "decimal": 2312,
     "validation": {
       "type": "range",
       "min": 50,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -2340,252 +2668,288 @@
       "type": "range",
       "min": 0,
       "max": 20,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P09-12",
     "name": "First notch filter frequency",
     "unit": "Hz",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x090C",
     "decimal": 2316,
     "validation": {
       "type": "range",
       "min": 50,
       "max": 4000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-13",
     "name": "First notch filter width class",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x090D",
     "decimal": 2317,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-14",
     "name": "First notch filter depth level",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x090E",
     "decimal": 2318,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 99,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-15",
     "name": "Second notch filter frequency",
     "unit": "Hz",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x090F",
     "decimal": 2319,
     "validation": {
       "type": "range",
       "min": 50,
       "max": 4000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-16",
     "name": "Second notch filter width level",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x0910",
     "decimal": 2320,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-17",
     "name": "Second notch filter depth level",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0911",
     "decimal": 2321,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 99,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-18",
     "name": "Third notch filter frequency",
     "unit": "Hz",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x0912",
     "decimal": 2322,
     "validation": {
       "type": "range",
       "min": 50,
       "max": 4000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-19",
     "name": "Third notch filter width level",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x0913",
     "decimal": 2323,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-20",
     "name": "Third notch filter depth level",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0914",
     "decimal": 2324,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 99,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-21",
     "name": "Fourth notch filter frequency",
     "unit": "Hz",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x0915",
     "decimal": 2325,
     "validation": {
       "type": "range",
       "min": 50,
       "max": 4000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-22",
     "name": "Fourth notch filter width class",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x0916",
     "decimal": 2326,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 20,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-23",
     "name": "Fourth notch filter depth level",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0917",
     "decimal": 2327,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 99,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-24",
     "name": "Resonance frequency identification results",
     "unit": "Hz",
-    "default": "0",
+    "default": 0,
     "hex": "0x0918",
     "decimal": 2328,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 2,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P09-30",
     "name": "Torque disturbance compensation gain",
     "unit": "%",
-    "default": "0",
+    "default": 0,
     "hex": "0x091E",
     "decimal": 2334,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P09-31",
     "name": "Torque disturbance observer filter time constant",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x091F",
     "decimal": 2335,
     "validation": {
       "type": "range",
       "min": 0,
-      "max": 250,
-      "number_type": "unsigned_integer_16bit"
+      "max": 2500,
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 2,
+      "two_complement": false
     }
   },
   {
     "code": "P09-38",
     "name": "Low frequency resonance frequency",
     "unit": "Hz",
-    "default": "1000",
+    "default": 1000,
     "hex": "0x0926",
     "decimal": 2342,
     "validation": {
       "type": "range",
-      "min": 1,
+      "min": 10,
       "max": 1000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P09-39",
     "name": "Low frequency resonance frequency filter setting",
     "unit": "-",
-    "default": "2",
+    "default": 2,
     "hex": "0x0927",
     "decimal": 2343,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-00",
     "name": "Power input phase loss protection selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0A00",
     "decimal": 2560,
     "validation": {
@@ -2594,14 +2958,16 @@
         "0": "Enable fault and disable warning",
         "1": "Enable fault and warning",
         "2": "Disable fault and warning"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-03",
     "name": "Power-down save function enable selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0A03",
     "decimal": 2563,
     "validation": {
@@ -2609,70 +2975,80 @@
       "options": {
         "0": "Do not execute power-down save",
         "1": "Execute power-down save"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-04",
     "name": "Motor overload protection gain",
     "unit": "%",
-    "default": "100",
+    "default": 100,
     "hex": "0x0A04",
     "decimal": 2564,
     "validation": {
       "type": "range",
       "min": 50,
       "max": 300,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-08",
     "name": "Overspeed fault threshold",
     "unit": "rpm",
-    "default": "0",
+    "default": 0,
     "hex": "0x0A08",
     "decimal": 2568,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-09",
     "name": "Maximum position pulse frequency",
     "unit": "kHz",
-    "default": "4000",
+    "default": 4000,
     "hex": "0x0A09",
     "decimal": 2569,
     "validation": {
       "type": "range",
       "min": 100,
       "max": 4000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-10",
     "name": "Excessive position deviation fault threshold",
     "unit": "Encoder / Command unit",
-    "default": "3145728",
+    "default": 3145728,
     "hex": "0x0A0A",
     "decimal": 2570,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 1073741824,
-      "number_type": "unsigned_integer_32bit"
+      "number_type": "unsigned_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-12",
     "name": "Overspeed protection function enable",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0A0C",
     "decimal": 2572,
     "validation": {
@@ -2680,28 +3056,32 @@
       "options": {
         "0": "No overspeed protection",
         "1": "Turn on overspeed protection"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-16",
     "name": "Low frequency resonance position deviation judgment threshold",
     "unit": "Encoder unit",
-    "default": "5",
+    "default": 5,
     "hex": "0x0A10",
     "decimal": 2576,
     "validation": {
       "type": "enum",
       "options": {
         "1": "1000"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-17",
     "name": "Position setting unit selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0A11",
     "decimal": 2577,
     "validation": {
@@ -2709,42 +3089,48 @@
       "options": {
         "0": "Encoder unit",
         "1": "Command unit"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-24",
     "name": "Low-speed pulse input pin filter time constant",
     "unit": "ns",
-    "default": "30",
+    "default": 30,
     "hex": "0x0A18",
     "decimal": 2584,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 255,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-25",
     "name": "Speed feedback display value filter time constant",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x0A19",
     "decimal": 2585,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 5000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-26",
     "name": "Motor overload shield enable",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0A1A",
     "decimal": 2586,
     "validation": {
@@ -2752,70 +3138,80 @@
       "options": {
         "0": "Turn on motor overload detection",
         "1": "Shield motor overload warning and fault detection"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-27",
     "name": "Speed DO filter time constant",
     "unit": "ms",
-    "default": "10",
+    "default": 10,
     "hex": "0x0A1B",
     "decimal": 2587,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 5000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-28",
     "name": "Quadrature encoder filter time constant",
     "unit": "ns",
-    "default": "30",
+    "default": 30,
     "hex": "0x0A1C",
     "decimal": 2588,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 255,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-30",
     "name": "High-speed pulse input pin filter time constant",
     "unit": "ns",
-    "default": "3",
+    "default": 3,
     "hex": "0x0A1E",
     "decimal": 2590,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 255,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-32",
     "name": "Stall overtemperature protection time window",
     "unit": "ms",
-    "default": "200",
+    "default": 200,
     "hex": "0x0A20",
     "decimal": 2592,
     "validation": {
       "type": "range",
       "min": 10,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0A-33",
     "name": "Stall overtemperature protection enable",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0A21",
     "decimal": 2593,
     "validation": {
@@ -2823,14 +3219,16 @@
       "options": {
         "0": "Shield motor stall overtemperature protection detection",
         "1": "Enable motor stall overtemperature protection detection"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-00",
     "name": "Multi-segment position operation mode",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x1100",
     "decimal": 4352,
     "validation": {
@@ -2840,28 +3238,32 @@
         "1": "Cycle operation (P11-01 selects the number of segments)",
         "2": "DI switch operation (Selected by DI)",
         "3": "Sequence operation (P11-01 selects the number of segments)"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-01",
     "name": "Number of segments at end point of displacement command",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x1101",
     "decimal": 4353,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 16,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-02",
     "name": "Margin processing method Valid in other three modes except DI mode",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1102",
     "decimal": 4354,
     "validation": {
@@ -2869,14 +3271,16 @@
       "options": {
         "0": "Continue to run the unfinished segment",
         "1": "Restart operation from segment 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-03",
     "name": "Time unit",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1103",
     "decimal": 4355,
     "validation": {
@@ -2884,14 +3288,16 @@
       "options": {
         "0": "ms",
         "1": "s"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-04",
     "name": "Displacement command type selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1104",
     "decimal": 4356,
     "validation": {
@@ -2899,924 +3305,1056 @@
       "options": {
         "0": "Relative displacement command",
         "1": "Absolute displacement command"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-05",
     "name": "Sequential operation start segment selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1105",
     "decimal": 4357,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 16,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-12",
     "name": "1st segment movement displacement",
     "unit": "Command displacement unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x110C",
     "decimal": 4364,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-14",
     "name": "The maximum running speed of the 1st segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x110E",
     "decimal": 4366,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-15",
     "name": "1st segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x110F",
     "decimal": 4367,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-16",
     "name": "Waiting time after the 1st segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1110",
     "decimal": 4368,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-17",
     "name": "2nd segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1111",
     "decimal": 4369,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-19",
     "name": "The maximum running speed of the 2nd segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1113",
     "decimal": 4371,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-20",
     "name": "2nd segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1114",
     "decimal": 4372,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-21",
     "name": "Waiting time after the 2nd segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1115",
     "decimal": 4373,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-22",
     "name": "3rd segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1116",
     "decimal": 4374,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-24",
     "name": "The maximum running speed of the 3rd segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1118",
     "decimal": 4376,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-25",
     "name": "3rd segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1119",
     "decimal": 4377,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-26",
     "name": "Waiting time after the 3rd segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x111A",
     "decimal": 4378,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-27",
     "name": "4th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x111B",
     "decimal": 4379,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-29",
     "name": "The maximum running speed of the 4th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x111D",
     "decimal": 4381,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-30",
     "name": "4th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x111E",
     "decimal": 4382,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-31",
     "name": "Waiting time after the 4th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x111F",
     "decimal": 4383,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-32",
     "name": "5th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1120",
     "decimal": 4384,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-34",
     "name": "The maximum running speed of the 5th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1122",
     "decimal": 4386,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-35",
     "name": "5th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1123",
     "decimal": 4387,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-36",
     "name": "Waiting time after the 5th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1124",
     "decimal": 4388,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-37",
     "name": "6th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1125",
     "decimal": 4389,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-39",
     "name": "The maximum running speed of the 6th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1127",
     "decimal": 4391,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-40",
     "name": "6th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1128",
     "decimal": 4392,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-41",
     "name": "Waiting time after the 6th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1129",
     "decimal": 4393,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-42",
     "name": "7th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x112A",
     "decimal": 4394,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-44",
     "name": "The maximum running speed of the 7th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x112C",
     "decimal": 4396,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-45",
     "name": "7th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x112D",
     "decimal": 4397,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-46",
     "name": "Waiting time after the 7th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x112E",
     "decimal": 4398,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-47",
     "name": "8th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x112F",
     "decimal": 4399,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-49",
     "name": "The maximum running speed of the 8th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1131",
     "decimal": 4401,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-50",
     "name": "8th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1132",
     "decimal": 4402,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-51",
     "name": "Waiting time after the 8th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1133",
     "decimal": 4403,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-52",
     "name": "9th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1134",
     "decimal": 4404,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-54",
     "name": "The maximum running speed of the 9th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1136",
     "decimal": 4406,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-55",
     "name": "9th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1137",
     "decimal": 4407,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-56",
     "name": "Waiting time after the 9th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1138",
     "decimal": 4408,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-57",
     "name": "10th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1139",
     "decimal": 4409,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-59",
     "name": "The maximum running speed of the 10th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x113B",
     "decimal": 4411,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-60",
     "name": "10th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x113C",
     "decimal": 4412,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-61",
     "name": "Waiting time after the 10th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x113D",
     "decimal": 4413,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-62",
     "name": "11th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x113E",
     "decimal": 4414,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-64",
     "name": "The maximum running speed of the 11th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1140",
     "decimal": 4416,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-65",
     "name": "11th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1141",
     "decimal": 4417,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-66",
     "name": "Waiting time after the 11th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1142",
     "decimal": 4418,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-67",
     "name": "12th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1143",
     "decimal": 4419,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-69",
     "name": "The maximum running speed of the 12th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1145",
     "decimal": 4421,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-70",
     "name": "12th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1146",
     "decimal": 4422,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-71",
     "name": "Waiting time after the 12th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1147",
     "decimal": 4423,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-72",
     "name": "13th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1148",
     "decimal": 4424,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-74",
     "name": "The maximum running speed of the 13th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x114A",
     "decimal": 4426,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-75",
     "name": "13th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x114B",
     "decimal": 4427,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-76",
     "name": "Waiting time after the 13th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x114C",
     "decimal": 4428,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-77",
     "name": "14th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x114D",
     "decimal": 4429,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-79",
     "name": "The maximum running speed of the 14th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x114F",
     "decimal": 4431,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-80",
     "name": "14th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1150",
     "decimal": 4432,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-81",
     "name": "Waiting time after the 14th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1151",
     "decimal": 4433,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-82",
     "name": "15th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1152",
     "decimal": 4434,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-84",
     "name": "The maximum running speed of the 15th segment displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1154",
     "decimal": 4436,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-85",
     "name": "15th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1155",
     "decimal": 4437,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-86",
     "name": "Waiting time after the 15th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x1156",
     "decimal": 4438,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-87",
     "name": "16th segment movement displacement",
     "unit": "Command unit",
-    "default": "10000",
+    "default": 10000,
     "hex": "0x1157",
     "decimal": 4439,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P11-89",
     "name": "Maximum running speed of 16th segment of displacement",
     "unit": "rpm",
-    "default": "200",
+    "default": 200,
     "hex": "0x1159",
     "decimal": 4441,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 6000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-90",
     "name": "16th segment displacement acceleration and deceleration time",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x115A",
     "decimal": 4442,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P11-91",
     "name": "Waiting time after the 16th segment displacement is completed",
     "unit": "ms(s)",
-    "default": "10",
+    "default": 10,
     "hex": "0x115B",
     "decimal": 4443,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 10000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-00",
     "name": "Multi-segment speed command operation mode",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x1200",
     "decimal": 4608,
     "validation": {
@@ -3824,28 +4362,32 @@
       "options": {
         "0": "Stop after a single operation",
         "12": "01 selects the number of segments) 1- Cycle operation(P12-01 selects the number of segments) 2- Switch via external DI"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-01",
     "name": "Speed command end segment selection",
     "unit": "-",
-    "default": "16",
+    "default": 16,
     "hex": "0x1201",
     "decimal": 4609,
     "validation": {
       "type": "range",
       "min": 1,
       "max": 16,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-02",
     "name": "Running time unit selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1202",
     "decimal": 4610,
     "validation": {
@@ -3853,154 +4395,176 @@
       "options": {
         "0": "sec",
         "1": "min"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-03",
     "name": "Acceleration time 1",
     "unit": "ms",
-    "default": "10",
+    "default": 10,
     "hex": "0x1203",
     "decimal": 4611,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-04",
     "name": "Deceleration time 1",
     "unit": "ms",
-    "default": "10",
+    "default": 10,
     "hex": "0x1204",
     "decimal": 4612,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-05",
     "name": "Acceleration time 2",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x1205",
     "decimal": 4613,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-06",
     "name": "Deceleration time 2",
     "unit": "ms",
-    "default": "50",
+    "default": 50,
     "hex": "0x1206",
     "decimal": 4614,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-07",
     "name": "Acceleration time 3",
     "unit": "ms",
-    "default": "100",
+    "default": 100,
     "hex": "0x1207",
     "decimal": 4615,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-08",
     "name": "Deceleration time 3",
     "unit": "ms",
-    "default": "100",
+    "default": 100,
     "hex": "0x1208",
     "decimal": 4616,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-09",
     "name": "Acceleration time 4",
     "unit": "ms",
-    "default": "150",
+    "default": 150,
     "hex": "0x1209",
     "decimal": 4617,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-10",
     "name": "Deceleration time 4",
     "unit": "ms",
-    "default": "150",
+    "default": 150,
     "hex": "0x120A",
     "decimal": 4618,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-20",
     "name": "1st segment speed command",
     "unit": "rpm",
-    "default": "0",
+    "default": 0,
     "hex": "0x1214",
     "decimal": 4628,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-21",
     "name": "1st segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1215",
     "decimal": 4629,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-22",
     "name": "1st segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1216",
     "decimal": 4630,
     "validation": {
@@ -4011,42 +4575,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-23",
     "name": "2nd segment speed command",
     "unit": "rpm",
-    "default": "100",
+    "default": 100,
     "hex": "0x1217",
     "decimal": 4631,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-24",
     "name": "2nd segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1218",
     "decimal": 4632,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-25",
     "name": "2nd segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1219",
     "decimal": 4633,
     "validation": {
@@ -4057,42 +4627,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-26",
     "name": "3rd segment speed command",
     "unit": "rpm",
-    "default": "300",
+    "default": 300,
     "hex": "0x121A",
     "decimal": 4634,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-27",
     "name": "3rd segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x121B",
     "decimal": 4635,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-28",
     "name": "3rd segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x121C",
     "decimal": 4636,
     "validation": {
@@ -4103,42 +4679,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-29",
     "name": "4th segment speed command",
     "unit": "rpm",
-    "default": "500",
+    "default": 500,
     "hex": "0x121D",
     "decimal": 4637,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-30",
     "name": "4th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x121E",
     "decimal": 4638,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-31",
     "name": "4th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x121F",
     "decimal": 4639,
     "validation": {
@@ -4149,42 +4731,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-32",
     "name": "5th segment speed command",
     "unit": "rpm",
-    "default": "700",
+    "default": 700,
     "hex": "0x1220",
     "decimal": 4640,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-33",
     "name": "5th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1221",
     "decimal": 4641,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-34",
     "name": "5th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1222",
     "decimal": 4642,
     "validation": {
@@ -4195,42 +4783,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-35",
     "name": "6th segment speed command",
     "unit": "rpm",
-    "default": "900",
+    "default": 900,
     "hex": "0x1223",
     "decimal": 4643,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-36",
     "name": "6th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1224",
     "decimal": 4644,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-37",
     "name": "6th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1225",
     "decimal": 4645,
     "validation": {
@@ -4241,42 +4835,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-38",
     "name": "7th segment speed command",
     "unit": "rpm",
-    "default": "600",
+    "default": 600,
     "hex": "0x1226",
     "decimal": 4646,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-39",
     "name": "7th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1227",
     "decimal": 4647,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-40",
     "name": "7th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1228",
     "decimal": 4648,
     "validation": {
@@ -4287,42 +4887,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-41",
     "name": "8th segment speed command",
     "unit": "rpm",
-    "default": "300",
+    "default": 300,
     "hex": "0x1229",
     "decimal": 4649,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-42",
     "name": "8th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x122A",
     "decimal": 4650,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-43",
     "name": "8th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x122B",
     "decimal": 4651,
     "validation": {
@@ -4333,42 +4939,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-44",
     "name": "9th segment speed command",
     "unit": "rpm",
-    "default": "100",
+    "default": 100,
     "hex": "0x122C",
     "decimal": 4652,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-45",
     "name": "9th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x122D",
     "decimal": 4653,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-46",
     "name": "9th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x122E",
     "decimal": 4654,
     "validation": {
@@ -4379,42 +4991,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-47",
     "name": "10th segment speed command",
     "unit": "rpm",
-    "default": "-100",
+    "default": -100,
     "hex": "0x122F",
     "decimal": 4655,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-48",
     "name": "10th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1230",
     "decimal": 4656,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-49",
     "name": "10th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1231",
     "decimal": 4657,
     "validation": {
@@ -4425,42 +5043,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-50",
     "name": "11th segment speed command",
     "unit": "rpm",
-    "default": "-300",
+    "default": -300,
     "hex": "0x1232",
     "decimal": 4658,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-51",
     "name": "11th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1233",
     "decimal": 4659,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-52",
     "name": "11th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1234",
     "decimal": 4660,
     "validation": {
@@ -4471,42 +5095,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-53",
     "name": "12th segment speed command",
     "unit": "rpm",
-    "default": "-500",
+    "default": -500,
     "hex": "0x1235",
     "decimal": 4661,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-54",
     "name": "12th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1236",
     "decimal": 4662,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-55",
     "name": "12th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1237",
     "decimal": 4663,
     "validation": {
@@ -4517,42 +5147,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-56",
     "name": "13th segment speed command",
     "unit": "rpm",
-    "default": "-700",
+    "default": -700,
     "hex": "0x1238",
     "decimal": 4664,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-57",
     "name": "13th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1239",
     "decimal": 4665,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-58",
     "name": "13th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x123A",
     "decimal": 4666,
     "validation": {
@@ -4563,42 +5199,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-59",
     "name": "14th segment speed command",
     "unit": "rpm",
-    "default": "-900",
+    "default": -900,
     "hex": "0x123B",
     "decimal": 4667,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-60",
     "name": "14th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x123C",
     "decimal": 4668,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-61",
     "name": "14th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x123D",
     "decimal": 4669,
     "validation": {
@@ -4609,42 +5251,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-62",
     "name": "15th segment speed command",
     "unit": "rpm",
-    "default": "-600",
+    "default": -600,
     "hex": "0x123E",
     "decimal": 4670,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-63",
     "name": "15th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x123F",
     "decimal": 4671,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-64",
     "name": "15th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1240",
     "decimal": 4672,
     "validation": {
@@ -4655,42 +5303,48 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P12-65",
     "name": "16th segment speed command",
     "unit": "rpm",
-    "default": "-300",
+    "default": -300,
     "hex": "0x1241",
     "decimal": 4673,
     "validation": {
       "type": "range",
       "min": -6000,
       "max": 6000,
-      "number_type": "signed_integer_16bit"
+      "number_type": "signed_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P12-66",
     "name": "16th segment command running time",
     "unit": "s(min)",
-    "default": "50",
+    "default": 50,
     "hex": "0x1242",
     "decimal": 4674,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 1,
+      "two_complement": false
     }
   },
   {
     "code": "P12-67",
     "name": "16th segment acceleration and deceleration time",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1243",
     "decimal": 4675,
     "validation": {
@@ -4701,26 +5355,30 @@
         "2": "Acc/Dec time 2",
         "3": "Acc/Dec time 3",
         "4": "Acc/Dec time 4"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-00",
     "name": "VDI1 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1700",
     "decimal": 5888,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-01",
     "name": "VDI1 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1701",
     "decimal": 5889,
     "validation": {
@@ -4728,26 +5386,30 @@
       "options": {
         "0": "Means active when VDI1 write 1",
         "1": "Means active when write value of VDI1 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-02",
     "name": "VDI2 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1702",
     "decimal": 5890,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-03",
     "name": "VDI2 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1703",
     "decimal": 5891,
     "validation": {
@@ -4755,26 +5417,30 @@
       "options": {
         "0": "Means active when VDI2 write 1",
         "1": "Means active when write value of VDI2 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-04",
     "name": "VDI3 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1704",
     "decimal": 5892,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-05",
     "name": "VDI3 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1705",
     "decimal": 5893,
     "validation": {
@@ -4782,26 +5448,30 @@
       "options": {
         "0": "Means active when VDI3 write 1",
         "1": "Means active when write value of VDI3 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-06",
     "name": "VDI4 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1706",
     "decimal": 5894,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-07",
     "name": "VDI4 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1707",
     "decimal": 5895,
     "validation": {
@@ -4809,26 +5479,30 @@
       "options": {
         "0": "Means active when VDI4 write 1",
         "1": "Means active when write value of VDI4 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-08",
     "name": "VDI5 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1708",
     "decimal": 5896,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-09",
     "name": "VDI5 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1709",
     "decimal": 5897,
     "validation": {
@@ -4836,26 +5510,30 @@
       "options": {
         "0": "Means active when VDI5 write 1",
         "1": "Means active when write value of VDI5 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-10",
     "name": "VDI6 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x170A",
     "decimal": 5898,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-11",
     "name": "VDI6 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x170B",
     "decimal": 5899,
     "validation": {
@@ -4863,26 +5541,30 @@
       "options": {
         "0": "Means active when VDI6 write 1",
         "1": "Means active when write value of VDI6 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-12",
     "name": "VDI7 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x170C",
     "decimal": 5900,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-13",
     "name": "VDI7 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x170D",
     "decimal": 5901,
     "validation": {
@@ -4890,26 +5572,30 @@
       "options": {
         "0": "Means active when VDI7 write 1",
         "1": "Means active when write value of VDI7 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-14",
     "name": "VDI8 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x170E",
     "decimal": 5902,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-15",
     "name": "VDI8 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x170F",
     "decimal": 5903,
     "validation": {
@@ -4917,26 +5603,30 @@
       "options": {
         "0": "Means active when VDI8 write 1",
         "1": "Means active when write value of VDI8 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-16",
     "name": "VDI9 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1710",
     "decimal": 5904,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-17",
     "name": "VDI9 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1711",
     "decimal": 5905,
     "validation": {
@@ -4944,26 +5634,30 @@
       "options": {
         "0": "Means active when VDI9 write 1",
         "1": "Means active when write value of VDI9 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-18",
     "name": "VDI10 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1712",
     "decimal": 5906,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-19",
     "name": "VDI10 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1713",
     "decimal": 5907,
     "validation": {
@@ -4971,26 +5665,30 @@
       "options": {
         "0": "Means active when VDI10 write 1",
         "1": "Means active when write value of VDI10 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-20",
     "name": "VDI11 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1714",
     "decimal": 5908,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-21",
     "name": "VDI11 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1715",
     "decimal": 5909,
     "validation": {
@@ -4998,26 +5696,30 @@
       "options": {
         "0": "Means active when VDI11 write 1",
         "1": "Means active when write value of VDI11 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-22",
     "name": "VDI12 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1716",
     "decimal": 5910,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-23",
     "name": "VDI12 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1717",
     "decimal": 5911,
     "validation": {
@@ -5025,26 +5727,30 @@
       "options": {
         "0": "Means active when VDI12 write 1",
         "1": "Means active when write value of VDI12 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-24",
     "name": "VDI13 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1718",
     "decimal": 5912,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-25",
     "name": "VDI13 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1719",
     "decimal": 5913,
     "validation": {
@@ -5052,26 +5758,30 @@
       "options": {
         "0": "Means active when VDI13 write 1",
         "1": "Means active when write value of VDI13 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-26",
     "name": "VDI14 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x171A",
     "decimal": 5914,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-27",
     "name": "VDI14 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x171B",
     "decimal": 5915,
     "validation": {
@@ -5079,26 +5789,30 @@
       "options": {
         "0": "Means active when VDI14 write 1",
         "1": "Means active when write value of VDI14 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-28",
     "name": "VDI15 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x171C",
     "decimal": 5916,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-29",
     "name": "VDI15 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x171D",
     "decimal": 5917,
     "validation": {
@@ -5106,26 +5820,30 @@
       "options": {
         "0": "Means active when VDI15 write 1",
         "1": "Means active when write value of VDI15 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-30",
     "name": "VDI16 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x171E",
     "decimal": 5918,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunIN.json"
+      "type": "enum",
+      "options_ref": "servo_FunIN.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-31",
     "name": "VDI16 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x171F",
     "decimal": 5919,
     "validation": {
@@ -5133,7 +5851,9 @@
       "options": {
         "0": "Means active when VDI16 write 1",
         "1": "Means active when write value of VDI16 changes from 0 to 1"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5142,25 +5862,31 @@
     "unit": "-",
     "default": "-",
     "hex": "0x1720",
-    "decimal": 5920
+    "decimal": 5920,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P17-33",
     "name": "VDO1 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1721",
     "decimal": 5921,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-34",
     "name": "VDO1 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1722",
     "decimal": 5922,
     "validation": {
@@ -5168,26 +5894,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-35",
     "name": "VDO2 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1723",
     "decimal": 5923,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-36",
     "name": "VDO2 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1724",
     "decimal": 5924,
     "validation": {
@@ -5195,26 +5925,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-37",
     "name": "VDO3 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1725",
     "decimal": 5925,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-38",
     "name": "VDO3 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1726",
     "decimal": 5926,
     "validation": {
@@ -5222,26 +5956,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-39",
     "name": "VDO4 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1727",
     "decimal": 5927,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-40",
     "name": "VDO4 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1728",
     "decimal": 5928,
     "validation": {
@@ -5249,26 +5987,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-41",
     "name": "VDO5 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1729",
     "decimal": 5929,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-42",
     "name": "VDO5 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x172A",
     "decimal": 5930,
     "validation": {
@@ -5276,26 +6018,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-43",
     "name": "VDO6 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x172B",
     "decimal": 5931,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-44",
     "name": "VDO6 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x172C",
     "decimal": 5932,
     "validation": {
@@ -5303,26 +6049,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-45",
     "name": "VDO7 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x172D",
     "decimal": 5933,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-46",
     "name": "VDO7 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x172E",
     "decimal": 5934,
     "validation": {
@@ -5330,26 +6080,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-47",
     "name": "VDO8 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x172F",
     "decimal": 5935,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-48",
     "name": "VDO8 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1730",
     "decimal": 5936,
     "validation": {
@@ -5357,26 +6111,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-49",
     "name": "VDO9 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1731",
     "decimal": 5937,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-50",
     "name": "VDO9 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1732",
     "decimal": 5938,
     "validation": {
@@ -5384,26 +6142,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-51",
     "name": "VDO10 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1733",
     "decimal": 5939,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-52",
     "name": "VDO10 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1734",
     "decimal": 5940,
     "validation": {
@@ -5411,26 +6173,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-53",
     "name": "VDO11 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1735",
     "decimal": 5941,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-54",
     "name": "VDO11 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1736",
     "decimal": 5942,
     "validation": {
@@ -5438,26 +6204,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-55",
     "name": "VDO12 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1737",
     "decimal": 5943,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-56",
     "name": "VDO12 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1738",
     "decimal": 5944,
     "validation": {
@@ -5465,26 +6235,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-57",
     "name": "VDO13 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1739",
     "decimal": 5945,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-58",
     "name": "VDO13 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x173A",
     "decimal": 5946,
     "validation": {
@@ -5492,26 +6266,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-59",
     "name": "VDO14 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x173B",
     "decimal": 5947,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-60",
     "name": "VDO14 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x173C",
     "decimal": 5948,
     "validation": {
@@ -5519,26 +6297,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-61",
     "name": "VDO15 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x173D",
     "decimal": 5949,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-62",
     "name": "VDO15 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x173E",
     "decimal": 5950,
     "validation": {
@@ -5546,26 +6328,30 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-63",
     "name": "VDO16 terminal function selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x173F",
     "decimal": 5951,
     "validation": {
-    "type": "enum",
-    "options_ref": "servo_FunOUT.json"
+      "type": "enum",
+      "options_ref": "servo_FunOUT.json",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P17-64",
     "name": "VDO16 terminal logic selection",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x1740",
     "decimal": 5952,
     "validation": {
@@ -5573,7 +6359,9 @@
       "options": {
         "0": "Means output 1 when active",
         "1": "Means output 0 when active"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5582,7 +6370,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x3000",
-    "decimal": 12288
+    "decimal": 12288,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P30-01",
@@ -5590,7 +6382,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x3001",
-    "decimal": 12289
+    "decimal": 12289,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P30-02",
@@ -5598,7 +6394,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x3002",
-    "decimal": 12290
+    "decimal": 12290,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P30-03",
@@ -5606,7 +6406,11 @@
     "unit": "rpm",
     "default": "-",
     "hex": "0x3003",
-    "decimal": 12291
+    "decimal": 12291,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P30-04",
@@ -5619,42 +6423,48 @@
       "type": "range",
       "min": 0,
       "max": 511,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P31-00",
     "name": "Communication given VDI virtual level",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x3100",
     "decimal": 12544,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 65535,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P31-04",
     "name": "Communication given DO output status",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x3104",
     "decimal": 12548,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 31,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0D-00",
     "name": "Software Reset",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0D00",
     "decimal": 3328,
     "validation": {
@@ -5662,14 +6472,16 @@
       "options": {
         "0": "No operation",
         "1": "Yes"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0D-01",
     "name": "Fault reset",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0D01",
     "decimal": 3329,
     "validation": {
@@ -5677,7 +6489,9 @@
       "options": {
         "0": "No operation",
         "1": "Yes"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5686,7 +6500,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0D02",
-    "decimal": 3330
+    "decimal": 3330,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0D-03",
@@ -5699,14 +6517,16 @@
       "type": "enum",
       "options": {
         "1": "Enable"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0D-05",
     "name": "Emergency shutdown",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0D05",
     "decimal": 3333,
     "validation": {
@@ -5714,7 +6534,9 @@
       "options": {
         "0": "No operation",
         "1": "Enable emergency stop"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5726,7 +6548,9 @@
     "decimal": 3338,
     "validation": {
       "type": "raw",
-      "value": "0-"
+      "value": "0-",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5735,13 +6559,17 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0D0B",
-    "decimal": 3339
+    "decimal": 3339,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0D-17",
     "name": "DIDO force input and output enable",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0D11",
     "decimal": 3345,
     "validation": {
@@ -5751,7 +6579,9 @@
         "1": "Force DI to enable",
         "2": "Force DO to enable",
         "3": "Force all DIDOs to enable"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5765,28 +6595,32 @@
       "type": "range",
       "min": 0,
       "max": 511,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0D-19",
     "name": "DO forced to output given value",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0D13",
     "decimal": 3347,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 31,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0D-20",
     "name": "Absolute encoder reset enable",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0D14",
     "decimal": 3348,
     "validation": {
@@ -5795,28 +6629,32 @@
         "0": "No operation",
         "1": "Reset fault and multi-turn data",
         "2": "Reset fault and multi-turn data"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-00",
     "name": "Servo axis address",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0C00",
     "decimal": 3072,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 247,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-02",
     "name": "Serial port baud rate setting",
     "unit": "-",
-    "default": "3",
+    "default": 3,
     "hex": "0x0C02",
     "decimal": 3074,
     "validation": {
@@ -5829,14 +6667,16 @@
         "4": "38400bps",
         "5": "57600bps",
         "6": "115200bps"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-03",
     "name": "Moubus data format",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0C03",
     "decimal": 3075,
     "validation": {
@@ -5846,14 +6686,16 @@
         "1": "Even parity",
         "2": "Odd parity",
         "3": "No parity"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-09",
     "name": "Communication VDI",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0C09",
     "decimal": 3081,
     "validation": {
@@ -5861,28 +6703,32 @@
       "options": {
         "0": "Disable",
         "1": "Yes"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-10",
     "name": "VDI default value after power-on",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0C0A",
     "decimal": 3082,
     "validation": {
       "type": "enum",
       "options": {
-        "0": "VDI1 default value …… Bit15-VDI16 default value"
-      }
+        "0": "VDI1 default value \u2026\u2026 Bit15-VDI16 default value"
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-11",
     "name": "Communication VDO",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0C0B",
     "decimal": 3083,
     "validation": {
@@ -5890,35 +6736,41 @@
       "options": {
         "0": "Disable",
         "1": "Yes"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-12",
     "name": "The default level when the VDO function is selected as 0",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0C0C",
     "decimal": 3084,
     "validation": {
       "type": "enum",
       "options": {
-        "0": "VDO1 default value …… Bit15-VDO16 default value"
-      }
+        "0": "VDO1 default value \u2026\u2026 Bit15-VDO16 default value"
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-13",
     "name": "Whether the write function code of Moubus communication is updated to EEPROM",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0C0D",
     "decimal": 3085,
     "validation": {
       "type": "enum",
       "options": {
         "0": "Do not update EEPROM 1- Update EEPROM except P0B set and P0D set"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5932,28 +6784,32 @@
       "type": "enum",
       "options": {
         "0001": "Illegal command code 0x0002 - Illegal data address 0x0003 - Illegal data 0x0004 - Slave device failure"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-25",
     "name": "Moubus command response delay",
     "unit": "ms",
-    "default": "1",
+    "default": 1,
     "hex": "0x0C19",
     "decimal": 3097,
     "validation": {
       "type": "range",
       "min": 0,
       "max": 5000,
-      "number_type": "unsigned_integer_16bit"
+      "number_type": "unsigned_integer_16bit",
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-26",
     "name": "Moubus communication data high and low order",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0C1A",
     "decimal": 3098,
     "validation": {
@@ -5961,21 +6817,25 @@
       "options": {
         "0": "High 16 bits first",
         "1": "Low 16 bits first"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
     "code": "P0C-30",
     "name": "Moubus error frame format selection",
     "unit": "-",
-    "default": "1",
+    "default": 1,
     "hex": "0x0C1E",
     "decimal": 3102,
     "validation": {
       "type": "enum",
       "options": {
         "0": "Old protocol 1- New protocol (standard)"
-      }
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -5984,7 +6844,11 @@
     "unit": "rpm",
     "default": "-",
     "hex": "0x0B00",
-    "decimal": 2816
+    "decimal": 2816,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-01",
@@ -5992,7 +6856,11 @@
     "unit": "rpm",
     "default": "-",
     "hex": "0x0B01",
-    "decimal": 2817
+    "decimal": 2817,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-02",
@@ -6000,7 +6868,11 @@
     "unit": "%",
     "default": "-",
     "hex": "0x0B02",
-    "decimal": 2818
+    "decimal": 2818,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-03",
@@ -6008,7 +6880,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0B03",
-    "decimal": 2819
+    "decimal": 2819,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-05",
@@ -6016,7 +6892,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0B05",
-    "decimal": 2821
+    "decimal": 2821,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-07",
@@ -6029,7 +6909,9 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6038,15 +6920,23 @@
     "unit": "Encoder unit",
     "default": "-",
     "hex": "0x0B09",
-    "decimal": 2825
+    "decimal": 2825,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-10",
     "name": "Electrical angle",
-    "unit": "°",
+    "unit": "\u00b0",
     "default": " -",
     "hex": "0x0B0A",
-    "decimal": 2826
+    "decimal": 2826,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-11",
@@ -6054,7 +6944,11 @@
     "unit": "rpm",
     "default": "-",
     "hex": "0x0B0B",
-    "decimal": 2827
+    "decimal": 2827,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-12",
@@ -6062,7 +6956,11 @@
     "unit": "%",
     "default": "-",
     "hex": "0x0B0C",
-    "decimal": 2828
+    "decimal": 2828,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-13",
@@ -6075,8 +6973,10 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
-    }    
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
+    }
   },
   {
     "code": "P0B-15",
@@ -6089,7 +6989,9 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6103,7 +7005,9 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6117,7 +7021,9 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6126,7 +7032,11 @@
     "unit": "V",
     "default": "-",
     "hex": "0x0B15",
-    "decimal": 2837
+    "decimal": 2837,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-22",
@@ -6134,7 +7044,11 @@
     "unit": "V",
     "default": "-",
     "hex": "0x0B16",
-    "decimal": 2838
+    "decimal": 2838,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-24",
@@ -6142,7 +7056,11 @@
     "unit": "A",
     "default": "-",
     "hex": "0x0B18",
-    "decimal": 2840
+    "decimal": 2840,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-26",
@@ -6150,28 +7068,38 @@
     "unit": "V",
     "default": "-",
     "hex": "0x0B1A",
-    "decimal": 2842
+    "decimal": 2842,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-27",
     "name": "Module temperature value",
-    "unit": "℃",
+    "unit": "\u2103",
     "default": "-",
     "hex": "0x0B1B",
-    "decimal": 2843
+    "decimal": 2843,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-33",
     "name": "Fault recording",
     "unit": "-",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B21",
     "decimal": 2849,
     "validation": {
       "type": "enum",
       "options": {
-        "0": "Current fault 1-Last fault 2-Last two faults …… 9- Last 9 faults"
-      }
+        "0": "Current fault 1-Last fault 2-Last two faults \u2026\u2026 9- Last 9 faults"
+      },
+      "decimal_places": 0,
+      "two_complement": false
     }
   },
   {
@@ -6180,7 +7108,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0B22",
-    "decimal": 2850
+    "decimal": 2850,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-35",
@@ -6193,7 +7125,9 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6202,7 +7136,11 @@
     "unit": "rpm",
     "default": "-",
     "hex": "0x0B25",
-    "decimal": 2853
+    "decimal": 2853,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-38",
@@ -6210,7 +7148,11 @@
     "unit": "A",
     "default": "-",
     "hex": "0x0B26",
-    "decimal": 2854
+    "decimal": 2854,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-39",
@@ -6218,7 +7160,11 @@
     "unit": "A",
     "default": "-",
     "hex": "0x0B27",
-    "decimal": 2855
+    "decimal": 2855,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-40",
@@ -6226,7 +7172,11 @@
     "unit": "V",
     "default": "-",
     "hex": "0x0B28",
-    "decimal": 2856
+    "decimal": 2856,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-41",
@@ -6234,7 +7184,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0B29",
-    "decimal": 2857
+    "decimal": 2857,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-42",
@@ -6242,7 +7196,11 @@
     "unit": "-",
     "default": "-",
     "hex": "0x0B2A",
-    "decimal": 2858
+    "decimal": 2858,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-53",
@@ -6255,7 +7213,9 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6270,35 +7230,41 @@
       "value": "0.1rpm",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-58",
     "name": "Mechanical absolute position (lower 32 bits)",
     "unit": "Encoder unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B3A",
     "decimal": 2874,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-60",
     "name": "Mechanical absolute position (upper 32 bits)",
     "unit": "Encoder unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B3C",
     "decimal": 2876,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
@@ -6312,99 +7278,117 @@
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-70",
     "name": "Absolute value encoder rotation data",
     "unit": "r",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B46",
-    "decimal": 2886
+    "decimal": 2886,
+    "validation": {
+      "decimal_places": 0,
+      "two_complement": false
+    }
   },
   {
     "code": "P0B-71",
     "name": "Position within 1 revolution of absolute value encoder",
     "unit": "Encoder Unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B47",
     "decimal": 2887,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-77",
     "name": "Absolute value encoder absolute position (lower 32 bits)",
     "unit": "Encoder Unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B4D",
     "decimal": 2893,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-79",
     "name": "Absolute value encoder absolute position (upper 32 bits)",
     "unit": "Encoder Unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B4F",
     "decimal": 2895,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-81",
     "name": "Rotating load single-turn position (lower 32 bits)",
     "unit": "Encoder unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B51",
     "decimal": 2897,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-83",
     "name": "Rotating load single-turn position (upper 32 bits)",
     "unit": "Encoder unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B53",
     "decimal": 2899,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   },
   {
     "code": "P0B-85",
     "name": "Rotating load single-turn position",
     "unit": "Command unit",
-    "default": "0",
+    "default": 0,
     "hex": "0x0B55",
     "decimal": 2901,
     "validation": {
       "type": "range",
       "min": -1073741824,
       "max": 1073741824,
-      "number_type": "signed_integer_32bit"
+      "number_type": "signed_integer_32bit",
+      "decimal_places": 0,
+      "two_complement": true
     }
   }
 ]
