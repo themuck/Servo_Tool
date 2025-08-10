@@ -8,19 +8,20 @@ Ein Desktop-Tool zur Analyse, Konfiguration und zum Tuning von **Lichuan A5 Serv
 
 ## 🚀 Kernfunktionen
 
-*   **Echtzeit-Plotting:** Grafische Darstellung von Servodaten wie Soll/Ist-Geschwindigkeit und Drehmoment mit automatischem Scrollen und Zoom-Funktionen.
+*   **Echtzeit-Plotting:** Hochperformante grafische Darstellung von Servodaten wie Soll/Ist-Geschwindigkeit und Drehmoment mit automatischem Scrollen und Zoom-Funktionen.
 *   **Parameter-Management:**
     *   Übersicht aller Servoparameter, gruppiert nach Funktion.
     *   Lesen und Schreiben von einzelnen oder mehreren Parametern.
-    *   Eingabefelder: Dropdown-Menüs für Parameter mit festen Optionen und Validierung für Wertebereiche, um Fehleingaben zu minimieren.
+    *   Intelligente Eingabefelder: Dropdown-Menüs für Parameter mit festen Optionen und Validierung für Wertebereiche, um Fehleingaben zu minimieren.
 *   **Farbliche Statusanzeige:**
     *   ⚪ **Weiß:** Parameterwert entspricht dem Werks-Default.
     *   🟡 **Gelb:** Gelesener Wert weicht vom Default ab.
     *   🟠 **Orange:** Wert wurde im Programm geändert und ist noch nicht geschrieben.
 *   **Import & Export:** Sichern und Laden der gesamten Gerätekonfiguration im JSON-Format.
 *   **Diagnose:**
-    *   Live-Anzeige des I/O & VDI/VDO -Status.
- *   **Simulationsmodus:** Ermöglicht das Testen der Oberfläche ohne angeschlossene Hardware.
+    *   Live-Anzeige des I/O-Status (DI/DO).
+    *   Auslesen und Anzeigen der Fehlerhistorie mit Beschreibungen.
+*   **Simulationsmodus:** Ermöglicht das Testen der Oberfläche ohne angeschlossene Hardware.
 
 ---
 
@@ -34,7 +35,42 @@ Ein Desktop-Tool zur Analyse, Konfiguration und zum Tuning von **Lichuan A5 Serv
 
 ---
 
-## 🔧 Workflow: Servo-Tuning (Empfohlene Vorgehensweise, einer KI)
+## ⚙️ Installation
+
+1.  **Repository klonen:**
+    ```bash
+    git clone https://github.com/IhrBenutzername/IhrRepoName.git
+    cd IhrRepoName
+    ```
+
+2.  **Virtuelle Umgebung erstellen (dringend empfohlen):**
+    ```bash
+    # Für Windows
+    py -m venv venv
+    venv\Scripts\activate
+
+    # Für macOS/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3.  **Abhängigkeiten installieren:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+---
+
+## 🏁 Anwendung starten
+
+```bash
+# Stelle sicher, dass deine virtuelle Umgebung (venv) aktiviert ist
+py main.py
+```
+
+---
+
+## 🔧 Workflow: Servo-Tuning (Empfohlene Vorgehensweise)
 
 Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Systems. Gehen Sie die Schritte in dieser Reihenfolge durch.
 
@@ -50,15 +86,15 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
     *   **Wirkungskette:** Ein falsch eingestelltes Trägheitsverhältnis führt dazu, dass der Regler eine falsche Annahme über die Systemdynamik hat. Eine zu aggressive Regelung (hohe Steifigkeit) trifft dann auf eine unerwartete mechanische Reaktion, was unweigerlich zu Schwingungen und Instabilität führt. Nur wenn der Regler die Systemträgheit kennt, kann die Steifigkeit sicher erhöht werden, um die maximale Performance zu erreichen.
     *   Folgen Sie daher diesem iterativen Prozess:
     *   **1. Startwerte setzen:**
-        *   Setzen Sie `P08-15 (Load inertia ratio)` auf einen Startwert von `1.0`.
-        *   Setzen Sie `P09-01 (Rigidity grade)` auf einen niedrigen Wert, z.B. `5`.
+        *   Setzen Sie `P08-15 (Load inertia ratio)` auf einen angemessenen Startwert.
+        *   Setzen Sie `P09-01 (Rigidity grade)` auf einen niedrigen Wert.
     *   **2. Steifigkeit (`P09-01`) anpassen:**
         *   Erhöhen Sie die Steifigkeit `P09-01` schrittweise, während der Motor läuft (idealerweise ohne komplexe Bewegung).
-        *   Stoppen Sie, sobald der Motor beginnt, hörbare Geräusche (Pfeifen, Summen) oder Vibrationen zu entwickeln. Reduzieren Sie den Wert dann wieder um 1-2 Stufen, bis der Lauf ruhig ist. Dies ist Ihre maximal mögliche Steifigkeit für die aktuelle Trägheitseinstellung.
+        *   Stoppen Sie, sobald der Motor beginnt, hörbare Geräusche (Pfeifen, Summen) oder Vibrationen zu entwickeln. Reduzieren Sie den Wert dann wieder, bis der Lauf ruhig ist. Dies ist Ihre maximal mögliche Steifigkeit für die aktuelle Trägheitseinstellung.
     *   **3. Trägheit (`P08-15`) anpassen:**
         *   Starten Sie nun eine für Ihre Anwendung typische Bewegung (z.B. über die Direktbefehle).
         *   **Beobachtung:** Wenn der Motor beim Beschleunigen/Abbremsen oder am Zielpunkt hin- und herschwingt ("überschießt"), ist das Trägheitsverhältnis wahrscheinlich zu niedrig.
-        *   **Anpassung:** Erhöhen Sie den Wert für `P08-15` schrittweise (z.B. in 0.5er oder 1.0er Schritten) und wiederholen Sie die Bewegung, bis das Schwingen minimiert ist.
+        *   **Anpassung:** Erhöhen Sie den Wert für `P08-15` schrittweise und wiederholen Sie die Bewegung, bis das Schwingen minimiert ist.
     *   **4. Wiederholung (optional, aber empfohlen):**
         *   Nachdem Sie die Trägheit (`P08-15`) erhöht haben, hat sich das Systemverhalten geändert. Gehen Sie nun zurück zu Punkt 2 und prüfen Sie, ob Sie die Steifigkeit (`P09-01`) nun vielleicht noch etwas weiter erhöhen können.
         *   Wiederholen Sie die Schritte 2 und 3, bis Sie einen stabilen Zustand gefunden haben, bei dem die Steifigkeit so hoch wie möglich ist, ohne dass es bei realen Bewegungen zu Schwingungen kommt. Erst dann ist die Basis für das Gain-Tuning gelegt.
@@ -68,6 +104,7 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
     *   **Worauf achten?** Beobachten Sie die `Actual Speed`-Linie. Schwingt sie stark über? Reagiert sie träge?
     *   **Plot-Funktionen nutzen:** Passen Sie die Zeitfenster-Breite an, um den optimalen Blick auf die Daten zu erhalten. Nutzen Sie die Zoom-Funktionen für eine detaillierte Analyse.
     *   Passen Sie nun die Parameter in **"Gain Parameter Set 1"** an:
+        *   **`P08-02 (Position loop gain)`:** Ein zentraler Parameter für die Positionsregelung. Beginnen Sie mit einem angemessenen Wert und justieren Sie langsam. Höhere Werte machen die Regelung schneller, aber zu viel davon führt zu Schwingungen.
         *   **`P08-00 (Speed loop gain)`:** Erhöhen, um die Reaktion zu beschleunigen.
         *   **`P08-01 (Speed loop integral time)`:** Verringern, um statische Abweichungen schneller zu korrigieren.
     *   **Ziel:** Eine schnelle Reaktion mit minimalem Überschwingen. Zu hohe Gain-Werte führen zu Vibrationen!
@@ -79,11 +116,3 @@ Das korrekte Tuning ist entscheidend für die Performance und Stabilität des Sy
 
 5.  **Schritt 4: Konfiguration sichern**
     *   Ein funktionierendes Tuning ist wertvoll. Sichern Sie es über `Datei -> Alle Register exportieren...`.
-    *   
-<img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/a069f7c6-ab77-4cc7-825a-13b370752467" />
-
-<img width="1481" height="1003" alt="image" src="https://github.com/user-attachments/assets/66d4305a-dfa5-4de7-9c94-7bf85cf950c2" />
-
-
-
-
